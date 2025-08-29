@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameZone - Ultimate Mobile Gaming</title>
+    <title>Top Mobile Games 2023 - Download Best Android & iOS Games</title>
+    <meta name="description" content="Download the most popular mobile games for Android and iOS. Free game downloads with premium features unlocked. Action, adventure, puzzle and RPG games.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -23,21 +24,27 @@
         /* Header Styles */
         header {
             background: linear-gradient(to right, #0f3460, #1a1a2e);
-            padding: 15px 20px;
+            padding: 12px 15px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
             position: relative;
             z-index: 100;
             border-bottom: 2px solid #e94560;
         }
         
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
         
         .logo-text {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
             background: linear-gradient(45deg, #4cc9f0, #4361ee);
             -webkit-background-clip: text;
@@ -48,15 +55,20 @@
         
         .logo-icon {
             color: #e94560;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
+        }
+        
+        .menu-icon {
+            font-size: 1.4rem;
+            color: #4cc9f0;
         }
         
         /* Slider Styles */
         .slider-container {
-            margin: 15px auto;
+            margin: 12px auto;
             width: 95%;
-            height: 180px;
-            border-radius: 16px;
+            height: 160px;
+            border-radius: 14px;
             overflow: hidden;
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
             position: relative;
@@ -76,7 +88,7 @@
             background-position: center;
             display: flex;
             align-items: flex-end;
-            padding: 15px;
+            padding: 12px;
         }
         
         .slide-1 {
@@ -93,30 +105,31 @@
         
         .slide-content {
             background: rgba(79, 69, 187, 0.7);
-            padding: 8px 15px;
-            border-radius: 12px;
+            padding: 6px 12px;
+            border-radius: 10px;
             backdrop-filter: blur(5px);
+            width: 100%;
         }
         
         .slide-title {
-            font-size: 1.2rem;
+            font-size: 1rem;
             font-weight: 600;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
         }
         
         .slide-desc {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             opacity: 0.9;
         }
         
         /* Games Grid */
         .games-container {
-            padding: 20px 15px;
+            padding: 15px 12px;
         }
         
         .section-title {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
             text-align: center;
             color: #4cc9f0;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -125,14 +138,14 @@
         .games-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+            gap: 15px;
         }
         
         .game-box {
             background: linear-gradient(145deg, #1e2a4a, #24315a);
-            border-radius: 16px;
+            border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
             display: flex;
@@ -141,44 +154,46 @@
         }
         
         .game-box:active {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
+            transform: translateY(-6px) scale(1.02);
+            box-shadow: 0 10px 16px rgba(0, 0, 0, 0.4);
         }
         
         .game-image {
-            height: 120px;
+            height: 100px;
             background-size: cover;
             background-position: center;
         }
         
         .game-content {
-            padding: 15px;
+            padding: 12px;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
         
         .game-title {
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             font-weight: 600;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             color: #f5f5f5;
         }
         
         .game-desc {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #b0b0b0;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             flex-grow: 1;
+            line-height: 1.3;
         }
         
         .download-btn {
             background: linear-gradient(to right, #4361ee, #3a0ca3);
             color: white;
             border: none;
-            padding: 10px 15px;
+            padding: 8px 12px;
             border-radius: 8px;
             font-weight: 600;
+            font-size: 0.85rem;
             cursor: pointer;
             text-align: center;
             transition: transform 0.2s, background 0.3s;
@@ -193,16 +208,16 @@
         /* Footer Styles */
         footer {
             background: linear-gradient(to right, #0f3460, #1a1a2e);
-            padding: 25px 20px;
+            padding: 20px 15px;
             text-align: center;
-            margin-top: 30px;
+            margin-top: 25px;
             border-top: 2px solid #e94560;
         }
         
         .footer-logo {
-            font-size: 2rem;
+            font-size: 1.7rem;
             font-weight: 700;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             background: linear-gradient(45deg, #4cc9f0, #4361ee);
             -webkit-background-clip: text;
             background-clip: text;
@@ -210,21 +225,22 @@
         }
         
         .footer-tagline {
-            font-size: 0.9rem;
-            margin-bottom: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
             color: #a0a0a0;
+            line-height: 1.4;
         }
         
         .social-icons {
             display: flex;
             justify-content: center;
-            gap: 20px;
-            margin-bottom: 20px;
+            gap: 15px;
+            margin-bottom: 15px;
         }
         
         .social-icons a {
             color: #4cc9f0;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             transition: color 0.3s;
         }
         
@@ -233,7 +249,7 @@
         }
         
         .copyright {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #777;
         }
         
@@ -248,14 +264,56 @@
         .slides {
             animation: slide 15s infinite;
         }
+        
+        /* SEO Content */
+        .seo-content {
+            padding: 15px;
+            margin-top: 20px;
+            background: rgba(30, 42, 74, 0.4);
+            border-radius: 12px;
+            margin: 15px;
+        }
+        
+        .seo-title {
+            font-size: 1.1rem;
+            color: #4cc9f0;
+            margin-bottom: 10px;
+        }
+        
+        .seo-text {
+            font-size: 0.8rem;
+            line-height: 1.5;
+            color: #d0d0d0;
+            margin-bottom: 10px;
+        }
+        
+        .seo-keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .keyword {
+            background: rgba(67, 97, 238, 0.2);
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            color: #a0c4ff;
+        }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header>
-        <div class="logo">
-            <i class="fas fa-gamepad logo-icon"></i>
-            <div class="logo-text">GameZone Hub</div>
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-gamepad logo-icon"></i>
+                <div class="logo-text">GameHub</div>
+            </div>
+            <div class="menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
     </header>
     
@@ -264,20 +322,20 @@
         <div class="slides">
             <div class="slide slide-1">
                 <div class="slide-content">
-                    <div class="slide-title">New Update Available!</div>
-                    <div class="slide-desc">Get the latest features in your favorite games</div>
+                    <div class="slide-title">New Games Added Daily</div>
+                    <div class="slide-desc">Download the latest mobile games</div>
                 </div>
             </div>
             <div class="slide slide-2">
                 <div class="slide-content">
-                    <div class="slide-title">Epic Tournament</div>
-                    <div class="slide-desc">Join now and win amazing prizes</div>
+                    <div class="slide-title">Premium Games Available</div>
+                    <div class="slide-desc">Unlock all features instantly</div>
                 </div>
             </div>
             <div class="slide slide-3">
                 <div class="slide-content">
-                    <div class="slide-title">Special Offer</div>
-                    <div class="slide-desc">50% off on in-game purchases this week</div>
+                    <div class="slide-title">Optimized for Mobile</div>
+                    <div class="slide-desc">Best performance on Android & iOS</div>
                 </div>
             </div>
         </div>
@@ -285,15 +343,15 @@
     
     <!-- Games Grid -->
     <div class="games-container">
-        <h2 class="section-title">Popular Games</h2>
+        <h2 class="section-title">Trending Mobile Games</h2>
         <div class="games-grid">
             <!-- Game 1 -->
             <div class="game-box">
                 <div class="game-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')"></div>
                 <div class="game-content">
-                    <h3 class="game-title">Epic Racing 3D</h3>
-                    <p class="game-desc">Experience the thrill of high-speed racing with stunning graphics.</p>
-                    <button class="download-btn" onclick="downloadGame('game1')">Download Now</button>
+                    <h3 class="game-title">Racing Master 3D</h3>
+                    <p class="game-desc">High-speed racing with stunning graphics and realistic physics.</p>
+                    <button class="download-btn" onclick="downloadGame('racing-master')">Download Now</button>
                 </div>
             </div>
             
@@ -301,9 +359,9 @@
             <div class="game-box">
                 <div class="game-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')"></div>
                 <div class="game-content">
-                    <h3 class="game-title">Puzzle Adventure</h3>
+                    <h3 class="game-title">Puzzle Quest Adventure</h3>
                     <p class="game-desc">Solve challenging puzzles in this exciting adventure game.</p>
-                    <button class="download-btn" onclick="downloadGame('game2')">Download Now</button>
+                    <button class="download-btn" onclick="downloadGame('puzzle-quest')">Download Now</button>
                 </div>
             </div>
             
@@ -311,9 +369,9 @@
             <div class="game-box">
                 <div class="game-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')"></div>
                 <div class="game-content">
-                    <h3 class="game-title">Magic Quest</h3>
+                    <h3 class="game-title">Magic Legends RPG</h3>
                     <p class="game-desc">Embark on a magical journey filled with monsters and treasures.</p>
-                    <button class="download-btn" onclick="downloadGame('game3')">Download Now</button>
+                    <button class="download-btn" onclick="downloadGame('magic-legends')">Download Now</button>
                 </div>
             </div>
             
@@ -321,9 +379,9 @@
             <div class="game-box">
                 <div class="game-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1511882150382-421056c89033?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80')"></div>
                 <div class="game-content">
-                    <h3 class="game-title">Zombie Shooter</h3>
+                    <h3 class="game-title">Zombie Apocalypse</h3>
                     <p class="game-desc">Survive the zombie apocalypse with your shooting skills.</p>
-                    <button class="download-btn" onclick="downloadGame('game4')">Download Now</button>
+                    <button class="download-btn" onclick="downloadGame('zombie-apocalypse')">Download Now</button>
                 </div>
             </div>
             
@@ -331,9 +389,9 @@
             <div class="game-box">
                 <div class="game-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1538481199705-c710c4e965fc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1065&q=80')"></div>
                 <div class="game-content">
-                    <h3 class="game-title">Soccer Fever</h3>
+                    <h3 class="game-title">Soccer Championship</h3>
                     <p class="game-desc">Score amazing goals and win the championship in this soccer game.</p>
-                    <button class="download-btn" onclick="downloadGame('game5')">Download Now</button>
+                    <button class="download-btn" onclick="downloadGame('soccer-championship')">Download Now</button>
                 </div>
             </div>
             
@@ -341,25 +399,45 @@
             <div class="game-box">
                 <div class="game-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1512790182412-b19e6d62bc39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80')"></div>
                 <div class="game-content">
-                    <h3 class="game-title">Space Battle</h3>
+                    <h3 class="game-title">Space Battlefront</h3>
                     <p class="game-desc">Fight alien invaders in this epic space shooter game.</p>
-                    <button class="download-btn" onclick="downloadGame('game6')">Download Now</button>
+                    <button class="download-btn" onclick="downloadGame('space-battlefront')">Download Now</button>
                 </div>
             </div>
         </div>
     </div>
     
+    <!-- SEO Content -->
+    <div class="seo-content">
+        <h3 class="seo-title">Download Premium Mobile Games</h3>
+        <p class="seo-text">GameHub offers the best selection of mobile games for Android and iOS devices. Download action, adventure, puzzle, RPG, and sports games with all premium features unlocked. Our collection is updated daily with the latest and most popular games.</p>
+        <p class="seo-text">All games are optimized for mobile devices with fast download times and easy installation. Experience gaming like never before with enhanced graphics and performance.</p>
+        <div class="seo-keywords">
+            <span class="keyword">mobile games</span>
+            <span class="keyword">android games</span>
+            <span class="keyword">iOS games</span>
+            <span class="keyword">action games</span>
+            <span class="keyword">adventure games</span>
+            <span class="keyword">puzzle games</span>
+            <span class="keyword">RPG games</span>
+            <span class="keyword">sports games</span>
+            <span class="keyword">download games</span>
+            <span class="keyword">premium games</span>
+            <span class="keyword">top games 2023</span>
+        </div>
+    </div>
+    
     <!-- Footer -->
     <footer>
-        <div class="footer-logo">GameZone</div>
-        <p class="footer-tagline">Your ultimate mobile gaming destination</p>
+        <div class="footer-logo">GameHub</div>
+        <p class="footer-tagline">Your ultimate destination for premium mobile games. Download the best games for Android and iOS.</p>
         <div class="social-icons">
             <a href="#"><i class="fab fa-facebook"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-youtube"></i></a>
         </div>
-        <p class="copyright">© 2023 GameZone. All rights reserved.</p>
+        <p class="copyright">© 2023 GameHub. All rights reserved.</p>
     </footer>
     
     <script>
@@ -370,21 +448,35 @@
             
             // Redirect to OGAds locked content
             window.location.href = ogAdsUrl;
-            
-            // You can also use a popup instead of redirect
-            // window.open(ogAdsUrl, '_blank');
         }
         
         // Add touch effect to game boxes
         document.querySelectorAll('.game-box').forEach(box => {
+            let touchStartTime;
+            
             box.addEventListener('touchstart', function() {
-                this.style.transform = 'translateY(-8px) scale(1.02)';
-                this.style.boxShadow = '0 12px 20px rgba(0, 0, 0, 0.4)';
+                this.style.transform = 'translateY(-6px) scale(1.02)';
+                this.style.boxShadow = '0 10px 16px rgba(0, 0, 0, 0.4)';
+                touchStartTime = new Date().getTime();
             });
             
             box.addEventListener('touchend', function() {
                 this.style.transform = '';
                 this.style.boxShadow = '';
+                
+                // If it was a quick tap (not a long press), consider it a click
+                const touchTime = new Date().getTime() - touchStartTime;
+                if (touchTime < 300) {
+                    this.click();
+                }
+            });
+        });
+        
+        // Add click event to game boxes for desktop testing
+        document.querySelectorAll('.game-box').forEach(box => {
+            box.addEventListener('click', function() {
+                const downloadBtn = this.querySelector('.download-btn');
+                downloadBtn.click();
             });
         });
     </script>
