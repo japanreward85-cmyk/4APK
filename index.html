@@ -3,586 +3,690 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameHub - Download Premium Mobile Games</title>
-    <meta name="description" content="Download the most popular mobile games for Android and iOS. Free game downloads with premium features unlocked. Action, adventure, puzzle and RPG games.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+    <meta name="description" content="Download trending mobile games. Experience the best mobile gaming hub with top-rated games.">
+    <meta name="author" content="japanreward85-cmyk">
+    <meta name="keywords" content="mobile games, game downloads, premium games, mobile gaming">
+    <meta property="og:title" content="GameZone - Premium Mobile Games Hub">
+    <meta property="og:description" content="Download trending mobile games. Join millions of players worldwide!">
+    <meta property="og:image" content="preview-image.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="GameZone - Premium Mobile Games Hub">
+    <meta name="twitter:description" content="Your ultimate gaming destination">
+    <meta name="twitter:image" content="preview-image.jpg">
+    <title>GameZone - Premium Mobile Games Hub</title>
+    
+    <!-- Add Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
     <style>
+        :root {
+            --primary-color: #1a1f3d;
+            --secondary-color: #ff3366;
+            --accent-color: #4facfe;
+            --background-color: #0f1127;
+            --text-color: #ffffff;
+            --success-color: #00ff88;
+            --card-bg: #252a4a;
+            --gradient-1: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
+            --gradient-2: linear-gradient(135deg, #ff3366 0%, #ff7750 100%);
+            --neon-shadow: 0 0 10px rgba(79, 172, 254, 0.5),
+                          0 0 20px rgba(79, 172, 254, 0.3),
+                          0 0 30px rgba(79, 172, 254, 0.1);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: #fff;
-            min-height: 100vh;
-            padding-bottom: 60px;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
-        
-        /* Header Styles */
+
+        /* Background Animation */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(79, 172, 254, 0.1) 0%, transparent 25%),
+                radial-gradient(circle at 80% 80%, rgba(255, 51, 102, 0.1) 0%, transparent 25%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
         header {
-            background: linear-gradient(to right, #0f3460, #1a1a2e);
-            padding: 12px 15px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
             position: relative;
-            z-index: 100;
-            border-bottom: 2px solid #e94560;
+            overflow: hidden;
         }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-1);
+            opacity: 0.1;
+            z-index: 1;
         }
-        
+
+        .header-container {
+            position: relative;
+            z-index: 2;
+        }
+
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .logo-text {
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: linear-gradient(45deg, #4cc9f0, #4361ee);
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            background: var(--gradient-1);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            text-shadow: var(--neon-shadow);
+            letter-spacing: 2px;
+            animation: glow 2s ease-in-out infinite alternate;
         }
-        
-        .logo-icon {
-            color: #e94560;
-            font-size: 1.5rem;
+
+        .logo span {
+            color: var(--secondary-color);
+            text-shadow: 0 0 15px rgba(255, 51, 102, 0.5);
         }
-        
-        .menu-icon {
-            font-size: 1.4rem;
-            color: #4cc9f0;
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(79, 172, 254, 0.5),
+                             0 0 20px rgba(79, 172, 254, 0.3),
+                             0 0 30px rgba(79, 172, 254, 0.1);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(79, 172, 254, 0.6),
+                             0 0 30px rgba(79, 172, 254, 0.4),
+                             0 0 40px rgba(79, 172, 254, 0.2);
+            }
         }
-        
-        /* Slider Styles */
-        .slider-container {
-            margin: 12px auto;
-            width: 95%;
-            height: 160px;
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-            position: relative;
-        }
-        
-        .slides {
-            width: 300%;
-            height: 100%;
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-        
-        .slide {
-            width: 33.33%;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: flex-end;
-            padding: 12px;
-        }
-        
-        .slide-1 {
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
-        }
-        
-        .slide-2 {
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80');
-        }
-        
-        .slide-3 {
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1542751110-97427bbecf20?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1084&q=80');
-        }
-        
-        .slide-content {
-            background: rgba(79, 69, 187, 0.7);
-            padding: 6px 12px;
-            border-radius: 10px;
-            backdrop-filter: blur(5px);
-            width: 100%;
-        }
-        
-        .slide-title {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 3px;
-        }
-        
-        .slide-desc {
-            font-size: 0.75rem;
+
+        .header-container p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
             opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: slideIn 1s ease-out;
         }
-        
-        /* Games Grid */
-        .games-container {
-            padding: 15px 12px;
+
+        .user-info {
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            display: inline-block;
+            backdrop-filter: blur(5px);
+            animation: fadeIn 1s ease-out;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
-        .section-title {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            text-align: center;
-            color: #4cc9f0;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-        
+
         .games-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
         }
-        
+
         .game-box {
-            background: linear-gradient(145deg, #1e2a4a, #24315a);
-            border-radius: 14px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
             overflow: hidden;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeIn 0.6s ease-out backwards;
         }
-        
-        .game-box:active {
-            transform: translateY(-6px) scale(1.02);
-            box-shadow: 0 10px 16px rgba(0, 0, 0, 0.4);
+
+        .game-box:nth-child(1) { animation-delay: 0.1s; }
+        .game-box:nth-child(2) { animation-delay: 0.2s; }
+        .game-box:nth-child(3) { animation-delay: 0.3s; }
+        .game-box:nth-child(4) { animation-delay: 0.4s; }
+        .game-box:nth-child(5) { animation-delay: 0.5s; }
+        .game-box:nth-child(6) { animation-delay: 0.6s; }
+
+        .game-box:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(79, 172, 254, 0.3);
+            border-color: var(--accent-color);
         }
-        
-        .game-image {
-            height: 100px;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: all 0.3s ease;
-        }
-        
-        .game-logo {
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
-            background: rgba(255, 255, 255, 0.9);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.8rem;
-            color: #4361ee;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+        .game-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(79, 172, 254, 0.1),
+                rgba(0, 242, 254, 0.1));
             opacity: 0;
-            transform: scale(0.8);
-            transition: all 0.3s ease;
+            transition: opacity 0.3s ease;
         }
-        
-        .game-content {
-            padding: 12px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
+
+        .game-box:hover::before {
+            opacity: 1;
         }
-        
-        .game-title {
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 6px;
-            color: #f5f5f5;
+
+        .game-box img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            transition: transform 0.5s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
-        
-        .game-desc {
-            font-size: 0.75rem;
-            color: #b0b0b0;
-            margin-bottom: 12px;
-            flex-grow: 1;
-            line-height: 1.3;
+
+        .game-box:hover img {
+            transform: scale(1.05);
         }
-        
+
+        .game-box h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-color);
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+        }
+
+        .game-box p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1.5rem;
+        }
+
         .download-btn {
-            background: linear-gradient(to right, #4361ee, #3a0ca3);
+            background: var(--gradient-2);
             color: white;
             border: none;
-            padding: 8px 12px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.85rem;
+            padding: 1rem 2rem;
+            border-radius: 30px;
             cursor: pointer;
-            text-align: center;
-            transition: transform 0.2s, background 0.3s;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-weight: 600;
+            font-size: 1rem;
+            width: 80%;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
         }
-        
-        .download-btn:active {
-            transform: scale(0.95);
-            background: linear-gradient(to right, #3a0ca3, #4361ee);
+
+        .download-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
         }
-        
-        /* Footer Styles */
-        footer {
-            background: linear-gradient(to right, #0f3460, #1a1a2e);
-            padding: 20px 15px;
-            text-align: center;
-            margin-top: 25px;
-            border-top: 2px solid #e94560;
+
+        .download-btn:hover::before {
+            left: 100%;
         }
-        
-        .footer-logo {
-            font-size: 1.7rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-            background: linear-gradient(45deg, #4cc9f0, #4361ee);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 51, 102, 0.4);
         }
-        
-        .footer-tagline {
-            font-size: 0.85rem;
-            margin-bottom: 15px;
-            color: #a0a0a0;
-            line-height: 1.4;
-        }
-        
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 15px;
-        }
-        
-        .social-icons a {
-            color: #4cc9f0;
-            font-size: 1.3rem;
-            transition: color 0.3s;
-        }
-        
-        .social-icons a:active {
-            color: #e94560;
-        }
-        
-        .copyright {
-            font-size: 0.75rem;
-            color: #777;
-        }
-        
-        /* Animation for slider */
-        @keyframes slide {
-            0%, 25% { transform: translateX(0); }
-            33%, 58% { transform: translateX(-33.33%); }
-            66%, 91% { transform: translateX(-66.66%); }
-            100% { transform: translateX(-66.66%); }
-        }
-        
-        .slides {
-            animation: slide 15s infinite;
-        }
-        
-        /* SEO Content */
-        .seo-content {
-            padding: 15px;
-            margin-top: 20px;
-            background: rgba(30, 42, 74, 0.4);
-            border-radius: 12px;
-            margin: 15px;
-        }
-        
-        .seo-title {
-            font-size: 1.1rem;
-            color: #4cc9f0;
-            margin-bottom: 10px;
-        }
-        
-        .seo-text {
-            font-size: 0.8rem;
-            line-height: 1.5;
-            color: #d0d0d0;
-            margin-bottom: 10px;
-        }
-        
-        .seo-keywords {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 10px;
-        }
-        
-        .keyword {
-            background: rgba(67, 97, 238, 0.2);
-            padding: 4px 8px;
-            border-radius: 12px;
-            font-size: 0.7rem;
-            color: #a0c4ff;
-        }
-        
-        /* Game logo styles */
-        .logo-racing { background: linear-gradient(45deg, #ff6b6b, #ee5a24); color: white; }
-        .logo-puzzle { background: linear-gradient(45deg, #4834d4, #686de0); color: white; }
-        .logo-magic { background: linear-gradient(45deg, #6ab04c, #badc58); color: white; }
-        .logo-zombie { background: linear-gradient(45deg, #30336b, #130f40); color: white; }
-        .logo-soccer { background: linear-gradient(45deg, #f9ca24, #f0932b); color: white; }
-        .logo-space { background: linear-gradient(45deg, #22a6b3, #7ed6df); color: white; }
-        
-        /* Custom Favicon styling for demonstration */
-        .favicon-demo {
-            position: fixed;
-            top: 10px;
-            right: 10px;
+
+        .share-button {
+            background: var(--accent-color);
+            color: white;
+            border: none;
             width: 32px;
             height: 32px;
-            background: #e94560;
-            border-radius: 6px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
             display: flex;
-            justify-content: center;
             align-items: center;
-            color: white;
-            font-size: 18px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            justify-content: center;
+            margin: 0.5rem auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .share-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .share-button:hover::before {
+            opacity: 1;
+        }
+
+        .share-button svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+            position: relative;
+            z-index: 1;
+        }
+
+        .share-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
             z-index: 1000;
+            max-width: 90%;
+            width: 320px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .share-modal.active {
+            display: block;
+            animation: modalFadeIn 0.3s ease-out;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -60%);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 17, 39, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 999;
+        }
+
+        .modal-overlay.active {
+            display: block;
+            animation: overlayFadeIn 0.3s ease-out;
+        }
+
+        @keyframes overlayFadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .share-link {
+            display: flex;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.75rem;
+            border-radius: 12px;
+            margin: 1rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .share-link input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+
+        .copy-btn {
+            background: var(--gradient-1);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(79, 172, 254, 0.3);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .modal-close:hover {
+            transform: rotate(90deg);
+        }
+
+        .share-message {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--success-color);
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1001;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+        }
+
+        .share-message.active {
+            opacity: 1;
+            animation: messageSlideUp 0.5s ease-out;
+        }
+
+        @keyframes messageSlideUp {
+            from {
+                transform: translate(-50%, 20px);
+                opacity: 0;
+            }
+            to {
+                transform: translate(-50%, 0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .games-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+                padding: 1.5rem;
+            }
+
+            .logo {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .logo {
+                font-size: 2rem;
+            }
+
+            .header-container p {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Demo of the favicon (not part of the actual page) -->
-    <div class="favicon-demo">🎮</div>
-
-    <!-- Header -->
     <header>
-        <div class="header-content">
-            <div class="logo">
-                <i class="fas fa-gamepad logo-icon"></i>
-                <div class="logo-text">GameHub</div>
-            </div>
-            <div class="menu-icon">
-                <i class="fas fa-bars"></i>
-            </div>
+        <div class="header-container">
+            <h1 class="logo">Game<span>Zone</span></h1>
+            <p>Your Ultimate Gaming Destination</p>
+            <div class="user-info">Welcome, japanreward85-cmyk</div>
         </div>
     </header>
-    
-    <!-- Slider -->
-    <div class="slider-container">
-        <div class="slides">
-            <div class="slide slide-1">
-                <div class="slide-content">
-                    <div class="slide-title">New Games Added Daily</div>
-                    <div class="slide-desc">Download the latest mobile games</div>
-                </div>
-            </div>
-            <div class="slide slide-2">
-                <div class="slide-content">
-                    <div class="slide-title">Premium Games Available</div>
-                    <div class="slide-desc">Unlock all features instantly</div>
-                </div>
-            </div>
-            <div class="slide slide-3">
-                <div class="slide-content">
-                    <div class="slide-title">Optimized for Mobile</div>
-                    <div class="slide-desc">Best performance on Android & iOS</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Games Grid -->
-    <div class="games-container">
-        <h2 class="section-title">Trending Mobile Games</h2>
-        <div class="games-grid">
+
+    <main>
+        <section class="games-grid">
             <!-- Game 1 -->
-            <div class="game-box" data-slide="0" data-image="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80">
-                <div class="game-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')">
-                    <div class="game-logo logo-racing"><i class="fas fa-car"></i></div>
-                </div>
-                <div class="game-content">
-                    <h3 class="game-title">Racing Master 3D</h3>
-                    <p class="game-desc">High-speed racing with stunning graphics and realistic physics.</p>
-                    <button class="download-btn" onclick="downloadGame('racing-master')">Download Now</button>
-                </div>
+            <div class="game-box">
+                <img src="game1.jpg" alt="Epic Adventure">
+                <h3>Epic Adventure</h3>
+                <p>Experience thrilling action gameplay</p>
+                <button class="share-button" aria-label="Share this game">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/>
+                    </svg>
+                </button>
+                <button class="download-btn" data-game="game1">Download Now</button>
             </div>
-            
+
             <!-- Game 2 -->
-            <div class="game-box" data-slide="1" data-image="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80">
-                <div class="game-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')">
-                    <div class="game-logo logo-puzzle"><i class="fas fa-puzzle-piece"></i></div>
-                </div>
-                <div class="game-content">
-                    <h3 class="game-title">Puzzle Quest Adventure</h3>
-                    <p class="game-desc">Solve challenging puzzles in this exciting adventure game.</p>
-                    <button class="download-btn" onclick="downloadGame('puzzle-quest')">Download Now</button>
-                </div>
+            <div class="game-box">
+                <img src="game2.jpg" alt="Kingdom Tactics">
+                <h3>Kingdom Tactics</h3>
+                <p>Build your empire and conquer</p>
+                <button class="share-button" aria-label="Share this game">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/>
+                    </svg>
+                </button>
+                <button class="download-btn" data-game="game2">Download Now</button>
             </div>
-            
+
             <!-- Game 3 -->
-            <div class="game-box" data-slide="2" data-image="https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80">
-                <div class="game-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1552820728-8b83bb6b773f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')">
-                    <div class="game-logo logo-magic"><i class="fas fa-hat-wizard"></i></div>
-                </div>
-                <div class="game-content">
-                    <h3 class="game-title">Magic Legends RPG</h3>
-                    <p class="game-desc">Embark on a magical journey filled with monsters and treasures.</p>
-                    <button class="download-btn" onclick="downloadGame('magic-legends')">Download Now</button>
-                </div>
+            <div class="game-box">
+                <img src="game3.jpg" alt="Speed Masters">
+                <h3>Speed Masters</h3>
+                <p>Race through epic tracks</p>
+                <button class="share-button" aria-label="Share this game">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/>
+                    </svg>
+                </button>
+                <button class="download-btn" data-game="game3">Download Now</button>
             </div>
-            
+
             <!-- Game 4 -->
-            <div class="game-box" data-slide="0" data-image="https://images.unsplash.com/photo-1511882150382-421056c89033?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80">
-                <div class="game-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1511882150382-421056c89033?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80')">
-                    <div class="game-logo logo-zombie"><i class="fas fa-skull"></i></div>
-                </div>
-                <div class="game-content">
-                    <h3 class="game-title">Zombie Apocalypse</h3>
-                    <p class="game-desc">Survive the zombie apocalypse with your shooting skills.</p>
-                    <button class="download-btn" onclick="downloadGame('zombie-apocalypse')">Download Now</button>
-                </div>
+            <div class="game-box">
+                <img src="game4.jpg" alt="Mind Quest">
+                <h3>Mind Quest</h3>
+                <p>Challenge your brain</p>
+                <button class="share-button" aria-label="Share this game">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/>
+                    </svg>
+                </button>
+                <button class="download-btn" data-game="game4">Download Now</button>
             </div>
-            
+
             <!-- Game 5 -->
-            <div class="game-box" data-slide="1" data-image="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1065&q=80">
-                <div class="game-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1538481199705-c710c4e965fc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1065&q=80')">
-                    <div class="game-logo logo-soccer"><i class="fas fa-futbol"></i></div>
-                </div>
-                <div class="game-content">
-                    <h3 class="game-title">Soccer Championship</h3>
-                    <p class="game-desc">Score amazing goals and win the championship in this soccer game.</p>
-                    <button class="download-btn" onclick="downloadGame('soccer-championship')">Download Now</button>
-                </div>
+            <div class="game-box">
+                <img src="game5.jpg" alt="Dragon Legend">
+                <h3>Dragon Legend</h3>
+                <p>Epic role-playing adventure</p>
+                <button class="share-button" aria-label="Share this game">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/>
+                    </svg>
+                </button>
+                <button class="download-btn" data-game="game5">Download Now</button>
             </div>
-            
+
             <!-- Game 6 -->
-            <div class="game-box" data-slide="2" data-image="https://images.unsplash.com/photo-1512790182412-b19e6d62bc39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80">
-                <div class="game-image" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1512790182412-b19e6d62bc39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80')">
-                    <div class="game-logo logo-space"><i class="fas fa-rocket"></i></div>
-                </div>
-                <div class="game-content">
-                    <h3 class="game-title">Space Battlefront</h3>
-                    <p class="game-desc">Fight alien invaders in this epic space shooter game.</p>
-                    <button class="download-btn" onclick="downloadGame('space-battlefront')">Download Now</button>
-                </div>
+            <div class="game-box">
+                <img src="game6.jpg" alt="Sports Champion">
+                <h3>Sports Champion</h3>
+                <p>Compete in global tournaments</p>
+                <button class="share-button" aria-label="Share this game">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/>
+                    </svg>
+                </button>
+                <button class="download-btn" data-game="game6">Download Now</button>
             </div>
+        </section>
+    </main>
+
+    <div class="modal-overlay"></div>
+    <div class="share-modal">
+        <button class="modal-close">&times;</button>
+        <h3>Share Game</h3>
+        <div class="share-link">
+            <input type="text" readonly>
+            <button class="copy-btn">Copy</button>
         </div>
+        <p>Share using your favorite app</p>
     </div>
-    
-    <!-- SEO Content -->
-    <div class="seo-content">
-        <h3 class="seo-title">Download Premium Mobile Games</h3>
-        <p class="seo-text">GameHub offers the best selection of mobile games for Android and iOS devices. Download action, adventure, puzzle, RPG, and sports games with all premium features unlocked. Our collection is updated daily with the latest and most popular games.</p>
-        <p class="seo-text">All games are optimized for mobile devices with fast download times and easy installation. Experience gaming like never before with enhanced graphics and performance.</p>
-        <div class="seo-keywords">
-            <span class="keyword">mobile games</span>
-            <span class="keyword">android games</span>
-            <span class="keyword">iOS games</span>
-            <span class="keyword">action games</span>
-            <span class="keyword">adventure games</span>
-            <span class="keyword">puzzle games</span>
-            <span class="keyword">RPG games</span>
-            <span class="keyword">sports games</span>
-            <span class="keyword">download games</span>
-            <span class="keyword">premium games</span>
-            <span class="keyword">top games 2023</span>
-        </div>
-    </div>
-    
-    <!-- Footer -->
-    <footer>
-        <div class="footer-logo">GameHub</div>
-        <p class="footer-tagline">Your ultimate destination for premium mobile games. Download the best games for Android and iOS.</p>
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-        </div>
-        <p class="copyright">© 2023 GameHub. All rights reserved.</p>
-    </footer>
-    
-    <script>
-        // Function to handle game downloads
-        function downloadGame(gameId) {
-            // Replace with your OGAds script URL
-            const ogAdsUrl = "https://your-ogads-script.com/lock/" + gameId;
-            
-            // Redirect to OGAds locked content
-            window.location.href = ogAdsUrl;
-            
-            // Prevent event bubbling
-            event.stopPropagation();
-        }
-        
-        // Add touch effect to game boxes
-        document.querySelectorAll('.game-box').forEach(box => {
-            let touchStartTime;
-            
-            box.addEventListener('touchstart', function() {
-                this.style.transform = 'translateY(-6px) scale(1.02)';
-                this.style.boxShadow = '0 10px 16px rgba(0, 0, 0, 0.4)';
-                touchStartTime = new Date().getTime();
-                
-                // Show the logo
-                const logo = this.querySelector('.game-logo');
-                logo.style.opacity = '1';
-                logo.style.transform = 'scale(1)';
-                
-                // Change slider to show game image
-                const slideIndex = this.getAttribute('data-slide');
-                const gameImage = this.getAttribute('data-image');
-                changeSliderImage(slideIndex, gameImage);
+    <div class="share-message">Link copied to clipboard!</div>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Share System
+            const shareButtons = document.querySelectorAll('.share-button');
+            const modal = document.querySelector('.share-modal');
+            const overlay = document.querySelector('.modal-overlay');
+            const closeBtn = document.querySelector('.modal-close');
+            const copyBtn = document.querySelector('.copy-btn');
+            const shareMessage = document.querySelector('.share-message');
+            const linkInput = document.querySelector('.share-link input');
+
+            function showShareModal(url) {
+                modal.classList.add('active');
+                overlay.classList.add('active');
+                linkInput.value = url;
+            }
+
+            function hideShareModal() {
+                modal.classList.remove('active');
+                overlay.classList.remove('active');
+            }
+
+            shareButtons.forEach(button => {
+                button.addEventListener('click', async (e) => {
+                    const gameBox = e.target.closest('.game-box');
+                    const gameTitle = gameBox.querySelector('h3').textContent;
+                    const shareUrl = window.location.href;
+                    const shareText = `Check out ${gameTitle} on GameZone!`;
+
+                    if (navigator.share) {
+                        try {
+                            await navigator.share({
+                                title: 'GameZone',
+                                text: shareText,
+                                url: shareUrl
+                            });
+                        } catch (err) {
+                            showShareModal(shareUrl);
+                        }
+                    } else {
+                        showShareModal(shareUrl);
+                    }
+                });
             });
-            
-            box.addEventListener('touchend', function() {
-                this.style.transform = '';
-                this.style.boxShadow = '';
+
+            closeBtn.addEventListener('click', hideShareModal);
+            overlay.addEventListener('click', hideShareModal);
+
+            copyBtn.addEventListener('click', () => {
+                linkInput.select();
+                document.execCommand('copy');
                 
-                // Hide the logo
-                const logo = this.querySelector('.game-logo');
-                logo.style.opacity = '0';
-                logo.style.transform = 'scale(0.8)';
+                shareMessage.classList.add('active');
+                setTimeout(() => {
+                    shareMessage.classList.remove('active');
+                }, 2000);
                 
-                // Reset slider after a delay
-                setTimeout(resetSlider, 2000);
-                
-                // If it was a quick tap (not a long press), consider it a click
-                const touchTime = new Date().getTime() - touchStartTime;
-                if (touchTime < 300) {
-                    // Don't trigger download, only the button does that
-                }
+                hideShareModal();
             });
-        });
-        
-        // Function to change slider image
-        function changeSliderImage(slideIndex, imageUrl) {
-            const slide = document.querySelectorAll('.slide')[slideIndex];
-            slide.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('${imageUrl}')`;
-            
-            // Pause the automatic slider
-            const slides = document.querySelector('.slides');
-            slides.style.animationPlayState = 'paused';
-        }
-        
-        // Function to reset slider
-        function resetSlider() {
-            const slides = document.querySelector('.slides');
-            slides.style.animationPlayState = 'running';
-            
-            // Reset slide backgrounds
-            document.querySelector('.slide-1').style.backgroundImage = "linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')";
-            document.querySelector('.slide-2').style.backgroundImage = "linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1511512578047-dfb367046420?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80')";
-            document.querySelector('.slide-3').style.backgroundImage = "linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1542751110-97427bbecf20?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1084&q=80')";
-        }
-        
-        // Prevent game box click from triggering download
-        document.querySelectorAll('.game-box').forEach(box => {
-            box.addEventListener('click', function(event) {
-                if (event.target !== this.querySelector('.download-btn')) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
+
+            // Download Button Functionality
+            document.querySelectorAll('.download-btn').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const gameId = this.getAttribute('data-game');
+                    const ogAdsScript = 'YOUR_OGADS_SCRIPT_URL';
+                    
+                    this.textContent = 'Loading...';
+                    this.disabled = true;
+
+                    try {
+                        window.location.href = `${ogAdsScript}?game=${gameId}`;
+                    } catch (error) {
+                        console.error('Download failed:', error);
+                        this.textContent = 'Download Now';
+                        this.disabled = false;
+                    }
+                });
+            });
+
+            // Progressive Loading
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            });
+
+            document.querySelectorAll('.game-box').forEach(box => {
+                observer.observe(box);
             });
         });
     </script>
