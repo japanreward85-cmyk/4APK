@@ -3,20 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Download trending mobile games. Experience the best mobile gaming hub with top-rated games.">
-    <meta name="author" content="japanreward85-cmyk">
-    <meta name="keywords" content="mobile games, game downloads, premium games, mobile gaming">
-    <meta property="og:title" content="GameZone - Premium Mobile Games Hub">
-    <meta property="og:description" content="Download trending mobile games. Join millions of players worldwide!">
-    <meta property="og:image" content="preview-image.jpg">
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="GameZone - Premium Mobile Games Hub">
-    <meta name="twitter:description" content="Your ultimate gaming destination">
-    <meta name="twitter:image" content="preview-image.jpg">
     <title>GameZone - Premium Mobile Games Hub</title>
+    
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff3366'><path d='M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z'/></svg>"/>
-    <!-- Add Google Fonts -->
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
@@ -32,9 +22,6 @@
             --card-bg: #252a4a;
             --gradient-1: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
             --gradient-2: linear-gradient(135deg, #ff3366 0%, #ff7750 100%);
-            --neon-shadow: 0 0 10px rgba(79, 172, 254, 0.5),
-                          0 0 20px rgba(79, 172, 254, 0.3),
-                          0 0 30px rgba(79, 172, 254, 0.1);
         }
 
         * {
@@ -51,31 +38,15 @@
             overflow-x: hidden;
         }
 
-        /* Background Animation */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 20% 20%, rgba(79, 172, 254, 0.1) 0%, transparent 25%),
-                radial-gradient(circle at 80% 80%, rgba(255, 51, 102, 0.1) 0%, transparent 25%);
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        header {
+        .header-container {
             background: var(--primary-color);
-            color: white;
             padding: 2rem 1rem;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        header::before {
+        .header-container::before {
             content: '';
             position: absolute;
             top: 0;
@@ -87,62 +58,48 @@
             z-index: 1;
         }
 
-        .header-container {
-            position: relative;
-            z-index: 2;
-        }
-
         .logo {
             font-family: 'Orbitron', sans-serif;
             font-size: 3.5rem;
             font-weight: 900;
             margin-bottom: 1rem;
-            text-transform: uppercase;
             background: var(--gradient-1);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            text-shadow: var(--neon-shadow);
-            letter-spacing: 2px;
-            animation: glow 2s ease-in-out infinite alternate;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 2;
         }
 
         .logo span {
             color: var(--secondary-color);
-            text-shadow: 0 0 15px rgba(255, 51, 102, 0.5);
         }
 
-        @keyframes glow {
-            from {
-                text-shadow: 0 0 10px rgba(79, 172, 254, 0.5),
-                             0 0 20px rgba(79, 172, 254, 0.3),
-                             0 0 30px rgba(79, 172, 254, 0.1);
-            }
-            to {
-                text-shadow: 0 0 20px rgba(79, 172, 254, 0.6),
-                             0 0 30px rgba(79, 172, 254, 0.4),
-                             0 0 40px rgba(79, 172, 254, 0.2);
-            }
+        .player-count {
+            font-size: 1.8rem;
+            margin: 1.5rem 0;
+            font-weight: 700;
+            color: var(--accent-color);
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s forwards;
+            position: relative;
+            z-index: 2;
         }
 
-        .header-container p {
+        .player-count span {
+            color: var(--secondary-color);
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .join-text {
             font-size: 1.2rem;
-            margin-bottom: 1rem;
-            opacity: 0.9;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            animation: slideIn 1s ease-out;
-        }
-
-        .user-info {
-            font-size: 0.9rem;
-            padding: 0.5rem 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 25px;
-            display: inline-block;
-            backdrop-filter: blur(5px);
-            animation: fadeIn 1s ease-out;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            animation: pulse 2s infinite;
+            position: relative;
+            z-index: 2;
         }
 
         .games-grid {
@@ -160,42 +117,13 @@
             padding: 1.5rem;
             text-align: center;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
+            transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            animation: fadeIn 0.6s ease-out backwards;
         }
-
-        .game-box:nth-child(1) { animation-delay: 0.1s; }
-        .game-box:nth-child(2) { animation-delay: 0.2s; }
-        .game-box:nth-child(3) { animation-delay: 0.3s; }
-        .game-box:nth-child(4) { animation-delay: 0.4s; }
-        .game-box:nth-child(5) { animation-delay: 0.5s; }
-        .game-box:nth-child(6) { animation-delay: 0.6s; }
 
         .game-box:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 15px 30px rgba(79, 172, 254, 0.3);
+            transform: translateY(-10px);
             border-color: var(--accent-color);
-        }
-
-        .game-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, 
-                rgba(79, 172, 254, 0.1),
-                rgba(0, 242, 254, 0.1));
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .game-box:hover::before {
-            opacity: 1;
         }
 
         .game-box img {
@@ -203,27 +131,21 @@
             height: 200px;
             object-fit: cover;
             border-radius: 15px;
-            margin-bottom: 1.5rem;
-            transition: transform 0.5s ease;
+            margin-bottom: 1rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .game-box:hover img {
-            transform: scale(1.05);
         }
 
         .game-box h3 {
             font-size: 1.4rem;
-            margin-bottom: 0.8rem;
+            margin: 1rem 0;
             color: var(--text-color);
             font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
         }
 
         .game-box p {
-            font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.7);
             margin-bottom: 1.5rem;
+            font-size: 0.9rem;
         }
 
         .download-btn {
@@ -234,459 +156,187 @@
             border-radius: 30px;
             cursor: pointer;
             font-weight: 600;
-            font-size: 1rem;
-            width: 80%;
+            width: 100%;
             transition: all 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 1px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .download-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: 0.5s;
-        }
-
-        .download-btn:hover::before {
-            left: 100%;
         }
 
         .download-btn:hover {
-            transform: translateY(-2px);
+            transform: scale(1.05);
             box-shadow: 0 5px 15px rgba(255, 51, 102, 0.4);
         }
 
-        .share-button {
-            background: var(--accent-color);
-            color: white;
-            border: none;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0.5rem auto;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .share-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-1);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .share-button:hover::before {
-            opacity: 1;
-        }
-
-        .share-button svg {
-            width: 16px;
-            height: 16px;
-            fill: currentColor;
-            position: relative;
-            z-index: 1;
-        }
-
-        .share-modal {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-            z-index: 1000;
-            max-width: 90%;
-            width: 320px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-        }
-
-        .share-modal.active {
-            display: block;
-            animation: modalFadeIn 0.3s ease-out;
-        }
-
-        @keyframes modalFadeIn {
-            from {
-                opacity: 0;
-                transform: translate(-50%, -60%);
-            }
+        @keyframes fadeInUp {
             to {
                 opacity: 1;
-                transform: translate(-50%, -50%);
-            }
-        }
-
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(15, 17, 39, 0.8);
-            backdrop-filter: blur(5px);
-            z-index: 999;
-        }
-
-        .modal-overlay.active {
-            display: block;
-            animation: overlayFadeIn 0.3s ease-out;
-        }
-
-        @keyframes overlayFadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        .share-link {
-            display: flex;
-            gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 0.75rem;
-            border-radius: 12px;
-            margin: 1rem 0;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .share-link input {
-            flex: 1;
-            border: none;
-            background: transparent;
-            color: var(--text-color);
-            font-size: 0.9rem;
-        }
-
-        .copy-btn {
-            background: var(--gradient-1);
-            color: white;
-            border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        .copy-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(79, 172, 254, 0.3);
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: none;
-            border: none;
-            color: var(--text-color);
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .modal-close:hover {
-            transform: rotate(90deg);
-        }
-
-        .share-message {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--success-color);
-            color: var(--primary-color);
-            padding: 1rem 2rem;
-            border-radius: 30px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 1001;
-            font-weight: 600;
-            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
-        }
-
-        .share-message.active {
-            opacity: 1;
-            animation: messageSlideUp 0.5s ease-out;
-        }
-
-        @keyframes messageSlideUp {
-            from {
-                transform: translate(-50%, 20px);
-                opacity: 0;
-            }
-            to {
-                transform: translate(-50%, 0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateY(-20px);
-                opacity: 0;
-            }
-            to {
                 transform: translateY(0);
-                opacity: 1;
             }
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+        @keyframes pulse {
+            0% { opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { opacity: 0.8; }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             .games-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 1.5rem;
                 padding: 1.5rem;
             }
+        }
 
+        @media (max-width: 768px) {
             .logo {
                 font-size: 2.5rem;
+            }
+            
+            .player-count {
+                font-size: 1.5rem;
+            }
+
+            .join-text {
+                font-size: 1rem;
             }
         }
 
         @media (max-width: 480px) {
             .games-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                padding: 1rem;
             }
 
-            .logo {
-                font-size: 2rem;
+            .game-box {
+                padding: 1rem;
             }
 
-            .header-container p {
-                font-size: 1rem;
+            .game-box h3 {
+                font-size: 1.2rem;
+            }
+
+            .download-btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <h1 class="logo">Game<span>Zone</span></h1>
-            <p>Your Ultimate Gaming Destination</p>
-            <div class="user-info"></div>
+    <div class="header-container">
+        <h1 class="logo">Game<span>Zone</span></h1>
+        <div class="player-count">
+            <span id="counter">0</span>+ Players
         </div>
-    </header>
+        <div class="join-text">Join Thousands of Players Worldwide!</div>
+    </div>
 
-    <main>
-        <section class="games-grid">
-            <!-- Game 1 -->
-            <div class="game-box">
-                <img src="game1.jpg" alt="Epic Adventure">
-                <h3>Epic Adventure</h3>
-                <p>Experience thrilling action gameplay</p>
-                <button class="share-button" aria-label="Share this game">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/>
-                    </svg>
-                </button>
-                <button class="download-btn" data-game="game1">Download Now</button>
-            </div>
+    <main class="games-grid">
+        <!-- Game 1 -->
+        <div class="game-box">
+            <img src="game1.jpg" alt="Epic Quest">
+            <h3>Epic Quest</h3>
+            <p>Adventure awaits in this epic journey</p>
+            <button class="download-btn">Download Now</button>
+        </div>
 
-            <!-- Game 2 -->
-            <div class="game-box">
-                <img src="game2.jpg" alt="Kingdom Tactics">
-                <h3>Kingdom Tactics</h3>
-                <p>Build your empire and conquer</p>
-                <button class="share-button" aria-label="Share this game">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/>
-                    </svg>
-                </button>
-                <button class="download-btn" data-game="game2">Download Now</button>
-            </div>
+        <!-- Game 2 -->
+        <div class="game-box">
+            <img src="game2.jpg" alt="Speed Racer">
+            <h3>Speed Racer</h3>
+            <p>Race through exciting tracks</p>
+            <button class="download-btn">Download Now</button>
+        </div>
 
-            <!-- Game 3 -->
-            <div class="game-box">
-                <img src="game3.jpg" alt="Speed Masters">
-                <h3>Speed Masters</h3>
-                <p>Race through epic tracks</p>
-                <button class="share-button" aria-label="Share this game">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/>
-                    </svg>
-                </button>
-                <button class="download-btn" data-game="game3">Download Now</button>
-            </div>
+        <!-- Game 3 -->
+        <div class="game-box">
+            <img src="game3.jpg" alt="Puzzle Master">
+            <h3>Puzzle Master</h3>
+            <p>Challenge your mind</p>
+            <button class="download-btn">Download Now</button>
+        </div>
 
-            <!-- Game 4 -->
-            <div class="game-box">
-                <img src="game4.jpg" alt="Mind Quest">
-                <h3>Mind Quest</h3>
-                <p>Challenge your brain</p>
-                <button class="share-button" aria-label="Share this game">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/>
-                    </svg>
-                </button>
-                <button class="download-btn" data-game="game4">Download Now</button>
-            </div>
+        <!-- Game 4 -->
+        <div class="game-box">
+            <img src="game4.jpg" alt="Dragon Wars">
+            <h3>Dragon Wars</h3>
+            <p>Epic fantasy battles</p>
+            <button class="download-btn">Download Now</button>
+        </div>
 
-            <!-- Game 5 -->
-            <div class="game-box">
-                <img src="game5.jpg" alt="Dragon Legend">
-                <h3>Dragon Legend</h3>
-                <p>Epic role-playing adventure</p>
-                <button class="share-button" aria-label="Share this game">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/>
-                    </svg>
-                </button>
-                <button class="download-btn" data-game="game5">Download Now</button>
-            </div>
+        <!-- Game 5 -->
+        <div class="game-box">
+            <img src="game5.jpg" alt="Space Explorer">
+            <h3>Space Explorer</h3>
+            <p>Discover new galaxies</p>
+            <button class="download-btn">Download Now</button>
+        </div>
 
-            <!-- Game 6 -->
-            <div class="game-box">
-                <img src="game6.jpg" alt="Sports Champion">
-                <h3>Sports Champion</h3>
-                <p>Compete in global tournaments</p>
-                <button class="share-button" aria-label="Share this game">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/>
-                    </svg>
-                </button>
-                <button class="download-btn" data-game="game6">Download Now</button>
-            </div>
-        </section>
+        <!-- Game 6 -->
+        <div class="game-box">
+            <img src="game6.jpg" alt="Sports Legend">
+            <h3>Sports Legend</h3>
+            <p>Become a sports champion</p>
+            <button class="download-btn">Download Now</button>
+        </div>
     </main>
 
-    <div class="modal-overlay"></div>
-    <div class="share-modal">
-        <button class="modal-close">&times;</button>
-        <h3>Share Game</h3>
-        <div class="share-link">
-            <input type="text" readonly>
-            <button class="copy-btn">Copy</button>
-        </div>
-        <p>Share using your favorite app</p>
-    </div>
-    <div class="share-message">Link copied to clipboard!</div>
-        <script>
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Share System
-            const shareButtons = document.querySelectorAll('.share-button');
-            const modal = document.querySelector('.share-modal');
-            const overlay = document.querySelector('.modal-overlay');
-            const closeBtn = document.querySelector('.modal-close');
-            const copyBtn = document.querySelector('.copy-btn');
-            const shareMessage = document.querySelector('.share-message');
-            const linkInput = document.querySelector('.share-link input');
+            // Animate player counter
+            const counter = document.getElementById('counter');
+            const targetNumber = 12698;
+            let current = 0;
+            
+            const animateValue = (timestamp) => {
+                if (!animateValue.start) animateValue.start = timestamp;
+                const progress = timestamp - animateValue.start;
+                const duration = 2000; // 2 seconds
+                
+                if (progress < duration) {
+                    current = Math.floor((targetNumber * progress) / duration);
+                    counter.textContent = current.toLocaleString();
+                    requestAnimationFrame(animateValue);
+                } else {
+                    counter.textContent = targetNumber.toLocaleString();
+                }
+            };
+            
+            requestAnimationFrame(animateValue);
 
-            function showShareModal(url) {
-                modal.classList.add('active');
-                overlay.classList.add('active');
-                linkInput.value = url;
-            }
-
-            function hideShareModal() {
-                modal.classList.remove('active');
-                overlay.classList.remove('active');
-            }
-
-            shareButtons.forEach(button => {
-                button.addEventListener('click', async (e) => {
-                    const gameBox = e.target.closest('.game-box');
-                    const gameTitle = gameBox.querySelector('h3').textContent;
-                    const shareUrl = window.location.href;
-                    const shareText = `Check out ${gameTitle} on GameZone!`;
-
-                    if (navigator.share) {
-                        try {
-                            await navigator.share({
-                                title: 'GameZone',
-                                text: shareText,
-                                url: shareUrl
-                            });
-                        } catch (err) {
-                            showShareModal(shareUrl);
+            // Game box animations on scroll
+            const gameBoxes = document.querySelectorAll('.game-box');
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
                         }
-                    } else {
-                        showShareModal(shareUrl);
-                    }
-                });
-            });
+                    });
+                },
+                {
+                    threshold: 0.1
+                }
+            );
 
-            closeBtn.addEventListener('click', hideShareModal);
-            overlay.addEventListener('click', hideShareModal);
-
-            copyBtn.addEventListener('click', () => {
-                linkInput.select();
-                document.execCommand('copy');
-                
-                shareMessage.classList.add('active');
-                setTimeout(() => {
-                    shareMessage.classList.remove('active');
-                }, 2000);
-                
-                hideShareModal();
-            });
-
-            // Download Button Functionality
-            document.querySelectorAll('.download-btn').forEach(button => {
-                button.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const gameId = this.getAttribute('data-game');
-                    const ogAdsScript = 'YOUR_OGADS_SCRIPT_URL';
-                    
-                    this.textContent = 'Loading...';
-                    this.disabled = true;
-
-                    try {
-                        window.location.href = `${ogAdsScript}?game=${gameId}`;
-                    } catch (error) {
-                        console.error('Download failed:', error);
-                        this.textContent = 'Download Now';
-                        this.disabled = false;
-                    }
-                });
-            });
-
-            // Progressive Loading
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                        observer.unobserve(entry.target);
-                    }
-                });
-            });
-
-            document.querySelectorAll('.game-box').forEach(box => {
+            gameBoxes.forEach(box => {
+                box.style.opacity = '0';
+                box.style.transform = 'translateY(20px)';
+                box.style.transition = 'all 0.6s ease-out';
                 observer.observe(box);
+            });
+
+            // Download button click effect
+            document.querySelectorAll('.download-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 200);
+                });
             });
         });
     </script>
