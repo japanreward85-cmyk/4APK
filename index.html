@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameZone - Premium Mobile Games Hub</title>
+    <title>GameZone - Premium Games Hub</title>
     
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff3366'><path d='M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z'/></svg>"/>
     
@@ -18,7 +18,6 @@
             --accent-color: #4facfe;
             --background-color: #0f1127;
             --text-color: #ffffff;
-            --success-color: #00ff88;
             --card-bg: #252a4a;
             --gradient-1: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
             --gradient-2: linear-gradient(135deg, #ff3366 0%, #ff7750 100%);
@@ -34,58 +33,139 @@
             font-family: 'Poppins', sans-serif;
             background-color: var(--background-color);
             color: var(--text-color);
-            line-height: 1.6;
-            overflow-x: hidden;
         }
 
         .header-container {
-            background: var(--primary-color);
-            padding: 2rem 1rem;
+            padding: 1rem;
             text-align: center;
             position: relative;
-            overflow: hidden;
-        }
-
-        .header-container::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--gradient-1);
-            opacity: 0.1;
-            z-index: 1;
+            background: var(--primary-color);
         }
 
         .logo {
             font-family: 'Orbitron', sans-serif;
-            font-size: 3.5rem;
+            font-size: 4rem;
             font-weight: 900;
-            margin-bottom: 1rem;
             background: var(--gradient-1);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             text-transform: uppercase;
-            position: relative;
-            z-index: 2;
+            margin: 0.5rem 0;
+            padding-top: 0;
         }
 
         .logo span {
             color: var(--secondary-color);
         }
 
+        /* Slideshow Styles */
+        .slideshow-container {
+            max-width: 1200px;
+            margin: 1rem auto;
+            position: relative;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 20px;
+            padding: 1rem;
+            overflow: hidden;
+        }
+
+        .slide {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: row !important;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 1rem;
+            width: 100%;
+            opacity: 1;
+        }
+
+        .slide-image {
+            flex: 1;
+            width: calc(33.333% - 1rem);
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .slide-image:hover {
+            transform: scale(1.02);
+        }
+
+        .slide-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 1rem;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+            transition: 0.3s ease;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+            border: none;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+        .prev:hover, .next:hover {
+            background: var(--secondary-color);
+        }
+
+        .dots {
+            text-align: center;
+            padding: 1rem;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            left: 0;
+        }
+
+        .dot {
+            height: 12px;
+            width: 12px;
+            margin: 0 5px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            display: inline-block;
+            transition: 0.3s ease;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: var(--secondary-color);
+        }
+
+        /* Player Count */
         .player-count {
-            font-size: 1.8rem;
-            margin: 1.5rem 0;
+            font-size: 2rem;
+            margin: 2rem 0;
             font-weight: 700;
             color: var(--accent-color);
-            opacity: 0;
-            transform: translateY(20px);
+            text-align: center;
             animation: fadeInUp 0.8s forwards;
-            position: relative;
-            z-index: 2;
         }
 
         .player-count span {
@@ -95,13 +175,13 @@
 
         .join-text {
             font-size: 1.2rem;
-            margin-top: 1rem;
+            text-align: center;
             color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
             animation: pulse 2s infinite;
-            position: relative;
-            z-index: 2;
         }
 
+        /* Games Grid */
         .games-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -132,20 +212,12 @@
             object-fit: cover;
             border-radius: 15px;
             margin-bottom: 1rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         .game-box h3 {
             font-size: 1.4rem;
             margin: 1rem 0;
-            color: var(--text-color);
             font-family: 'Orbitron', sans-serif;
-        }
-
-        .game-box p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 1.5rem;
-            font-size: 0.9rem;
         }
 
         .download-btn {
@@ -167,7 +239,61 @@
             box-shadow: 0 5px 15px rgba(255, 51, 102, 0.4);
         }
 
+        @media (max-width: 1024px) {
+            .games-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .slide.active {
+                flex-direction: row !important;
+            }
+            
+            .slide-image {
+                height: 200px;
+                min-width: calc(33.333% - 1rem);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 3rem;
+            }
+            
+            .player-count {
+                font-size: 1.5rem;
+            }
+            
+            .slide-image {
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .games-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+                padding: 1rem;
+            }
+            
+            .game-box h3 {
+                font-size: 1.2rem;
+            }
+            
+            .download-btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+            
+            .slide-image {
+                height: 120px;
+            }
+        }
+
         @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -179,113 +305,175 @@
             50% { opacity: 1; }
             100% { opacity: 0.8; }
         }
-
-        @media (max-width: 1024px) {
-            .games-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
-                padding: 1.5rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .logo {
-                font-size: 2.5rem;
-            }
-            
-            .player-count {
-                font-size: 1.5rem;
-            }
-
-            .join-text {
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .games-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-                padding: 1rem;
-            }
-
-            .game-box {
-                padding: 1rem;
-            }
-
-            .game-box h3 {
-                font-size: 1.2rem;
-            }
-
-            .download-btn {
-                padding: 0.8rem 1.5rem;
-                font-size: 0.9rem;
-            }
-        }
     </style>
 </head>
 <body>
     <div class="header-container">
         <h1 class="logo">Game<span>Zone</span></h1>
-        <div class="player-count">
-            <span id="counter">0</span>+ Players
-        </div>
-        <div class="join-text">Join Thousands of Players Worldwide!</div>
     </div>
+
+    <div class="slideshow-container">
+        <!-- GTA 5 Slides -->
+        <div class="slide active">
+            <div class="slide-image"><img src="gta5_1.jpg" alt="GTA 5 Screenshot 1"></div>
+            <div class="slide-image"><img src="gta5_2.jpg" alt="GTA 5 Screenshot 2"></div>
+            <div class="slide-image"><img src="gta5_3.jpg" alt="GTA 5 Screenshot 3"></div>
+        </div>
+
+        <!-- Roblox MOD Slides -->
+        <div class="slide">
+            <div class="slide-image"><img src="roblox_1.jpg" alt="Roblox MOD Screenshot 1"></div>
+            <div class="slide-image"><img src="roblox_2.jpg" alt="Roblox MOD Screenshot 2"></div>
+            <div class="slide-image"><img src="roblox_3.jpg" alt="Roblox MOD Screenshot 3"></div>
+        </div>
+
+        <!-- Fortnite Slides -->
+        <div class="slide">
+            <div class="slide-image"><img src="fortnite_1.jpg" alt="Fortnite Screenshot 1"></div>
+            <div class="slide-image"><img src="fortnite_2.jpg" alt="Fortnite Screenshot 2"></div>
+            <div class="slide-image"><img src="fortnite_3.jpg" alt="Fortnite Screenshot 3"></div>
+        </div>
+
+        <!-- Valorant Slides -->
+        <div class="slide">
+            <div class="slide-image"><img src="valorant_1.jpg" alt="Valorant Screenshot 1"></div>
+            <div class="slide-image"><img src="valorant_2.jpg" alt="Valorant Screenshot 2"></div>
+            <div class="slide-image"><img src="valorant_3.jpg" alt="Valorant Screenshot 3"></div>
+        </div>
+
+        <!-- CS2 Slides -->
+        <div class="slide">
+            <div class="slide-image"><img src="cs2_1.jpg" alt="Counter Strike 2 Screenshot 1"></div>
+            <div class="slide-image"><img src="cs2_2.jpg" alt="Counter Strike 2 Screenshot 2"></div>
+            <div class="slide-image"><img src="cs2_3.jpg" alt="Counter Strike 2 Screenshot 3"></div>
+        </div>
+
+        <!-- MK1 Slides -->
+        <div class="slide">
+            <div class="slide-image"><img src="mk1_1.jpg" alt="Mortal Kombat 1 Screenshot 1"></div>
+            <div class="slide-image"><img src="mk1_2.jpg" alt="Mortal Kombat 1 Screenshot 2"></div>
+            <div class="slide-image"><img src="mk1_3.jpg" alt="Mortal Kombat 1 Screenshot 3"></div>
+        </div>
+
+        <button class="prev" onclick="changeSlide(-1)">❮</button>
+        <button class="next" onclick="changeSlide(1)">❯</button>
+
+        <div class="dots"></div>
+    </div>
+
+    <div class="player-count">
+        <span id="counter">0</span>+ Players
+    </div>
+    <div class="join-text">Join Thousands of Players Worldwide!</div>
 
     <main class="games-grid">
         <!-- Game 1 -->
         <div class="game-box">
-            <img src="game1.jpg" alt="Epic Quest">
-            <h3>Epic Quest</h3>
-            <p>Adventure awaits in this epic journey</p>
+            <img src="game1.jpg" alt="GTA 5">
+            <h3>GTA 5</h3>
+            <p>Experience the criminal underworld of Los Santos</p>
             <button class="download-btn">Download Now</button>
         </div>
 
         <!-- Game 2 -->
         <div class="game-box">
-            <img src="game2.jpg" alt="Speed Racer">
-            <h3>Speed Racer</h3>
-            <p>Race through exciting tracks</p>
+            <img src="game2.jpg" alt="Roblox MOD">
+            <h3>Roblox MOD</h3>
+            <p>Enhanced version with exclusive features</p>
             <button class="download-btn">Download Now</button>
         </div>
 
         <!-- Game 3 -->
         <div class="game-box">
-            <img src="game3.jpg" alt="Puzzle Master">
-            <h3>Puzzle Master</h3>
-            <p>Challenge your mind</p>
+            <img src="game3.jpg" alt="Fortnite">
+            <h3>Fortnite</h3>
+            <p>Battle royale with unique building mechanics</p>
             <button class="download-btn">Download Now</button>
         </div>
 
         <!-- Game 4 -->
         <div class="game-box">
-            <img src="game4.jpg" alt="Dragon Wars">
-            <h3>Dragon Wars</h3>
-            <p>Epic fantasy battles</p>
+            <img src="game4.jpg" alt="Valorant">
+            <h3>Valorant</h3>
+            <p>Tactical shooter with unique abilities</p>
             <button class="download-btn">Download Now</button>
         </div>
 
         <!-- Game 5 -->
         <div class="game-box">
-            <img src="game5.jpg" alt="Space Explorer">
-            <h3>Space Explorer</h3>
-            <p>Discover new galaxies</p>
+            <img src="game5.jpg" alt="Counter Strike 2">
+            <h3>Counter Strike 2</h3>
+            <p>Next generation tactical team shooter</p>
             <button class="download-btn">Download Now</button>
         </div>
 
         <!-- Game 6 -->
         <div class="game-box">
-            <img src="game6.jpg" alt="Sports Legend">
-            <h3>Sports Legend</h3>
-            <p>Become a sports champion</p>
+            <img src="game6.jpg" alt="Mortal Kombat 1">
+            <h3>Mortal Kombat 1</h3>
+            <p>Ultimate fighting with brutal fatalities</p>
             <button class="download-btn">Download Now</button>
         </div>
     </main>
 
     <script>
+        let slideIndex = 1;
+        let autoSlideInterval;
+        const totalSlides = document.querySelectorAll('.slide').length;
+        
+        // Create dots
+        const dotsContainer = document.querySelector('.dots');
+        for(let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('span');
+            dot.className = 'dot';
+            dot.onclick = () => currentSlide(i + 1);
+            dotsContainer.appendChild(dot);
+        }
+
+        showSlides(slideIndex);
+        startAutoSlide();
+
+        function changeSlide(n) {
+            showSlides(slideIndex += n);
+            resetAutoSlide();
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+            resetAutoSlide();
+        }
+
+        function showSlides(n) {
+            const slides = document.getElementsByClassName("slide");
+            const dots = document.getElementsByClassName("dot");
+            
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove('active');
+            }
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove('active');
+            }
+            
+            slides[slideIndex-1].classList.add('active');
+            dots[slideIndex-1].classList.add('active');
+        }
+
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(() => {
+                changeSlide(1);
+            }, 5000);
+        }
+
+        function resetAutoSlide() {
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
+        }
+
+        // Player counter animation
         document.addEventListener('DOMContentLoaded', function() {
-            // Animate player counter
             const counter = document.getElementById('counter');
             const targetNumber = 12698;
             let current = 0;
@@ -293,7 +481,7 @@
             const animateValue = (timestamp) => {
                 if (!animateValue.start) animateValue.start = timestamp;
                 const progress = timestamp - animateValue.start;
-                const duration = 2000; // 2 seconds
+                const duration = 2000;
                 
                 if (progress < duration) {
                     current = Math.floor((targetNumber * progress) / duration);
@@ -305,29 +493,6 @@
             };
             
             requestAnimationFrame(animateValue);
-
-            // Game box animations on scroll
-            const gameBoxes = document.querySelectorAll('.game-box');
-            const observer = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.style.opacity = '1';
-                            entry.target.style.transform = 'translateY(0)';
-                        }
-                    });
-                },
-                {
-                    threshold: 0.1
-                }
-            );
-
-            gameBoxes.forEach(box => {
-                box.style.opacity = '0';
-                box.style.transform = 'translateY(20px)';
-                box.style.transition = 'all 0.6s ease-out';
-                observer.observe(box);
-            });
 
             // Download button click effect
             document.querySelectorAll('.download-btn').forEach(button => {
