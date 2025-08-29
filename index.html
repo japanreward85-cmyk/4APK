@@ -112,75 +112,358 @@
             text-shadow: 0 0 15px rgba(255, 51, 102, 0.5);
         }
 
-        .prize-claim {
-            font-size: 1.1rem;
-            padding: 0.8rem 1.5rem;
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(79, 172, 254, 0.5),
+                             0 0 20px rgba(79, 172, 254, 0.3),
+                             0 0 30px rgba(79, 172, 254, 0.1);
+            }
+            to {
+                text-shadow: 0 0 20px rgba(79, 172, 254, 0.6),
+                             0 0 30px rgba(79, 172, 254, 0.4),
+                             0 0 40px rgba(79, 172, 254, 0.2);
+            }
+        }
+
+        .header-container p {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            animation: slideIn 1s ease-out;
+        }
+
+        .user-info {
+            font-size: 0.9rem;
+            padding: 0.5rem 1rem;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 25px;
-            display: inline-flex;
-            align-items: center;
-            gap: 1rem;
+            display: inline-block;
             backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            animation: floatAnimation 3s ease-in-out infinite;
+            animation: fadeIn 1s ease-out;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .prize-animation {
-            font-size: 1.5rem;
-            animation: spinEmoji 2s linear infinite;
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
-        .claim-text {
-            background: linear-gradient(45deg, #fff, #ffd700);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            font-weight: 600;
-        }
-
-        .community-counter {
-            background: rgba(79, 172, 254, 0.1);
-            padding: 1rem;
-            margin-top: 2rem;
+        .game-box {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 1.5rem;
             text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: fadeIn 0.6s ease-out backwards;
         }
 
-        .counter-number {
-            color: var(--accent-color);
+        .game-box:nth-child(1) { animation-delay: 0.1s; }
+        .game-box:nth-child(2) { animation-delay: 0.2s; }
+        .game-box:nth-child(3) { animation-delay: 0.3s; }
+        .game-box:nth-child(4) { animation-delay: 0.4s; }
+        .game-box:nth-child(5) { animation-delay: 0.5s; }
+        .game-box:nth-child(6) { animation-delay: 0.6s; }
+
+        .game-box:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(79, 172, 254, 0.3);
+            border-color: var(--accent-color);
+        }
+
+        .game-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(79, 172, 254, 0.1),
+                rgba(0, 242, 254, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .game-box:hover::before {
+            opacity: 1;
+        }
+
+        .game-box img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 1.5rem;
+            transition: transform 0.5s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .game-box:hover img {
+            transform: scale(1.05);
+        }
+
+        .game-box h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-color);
+            font-family: 'Orbitron', sans-serif;
             font-weight: 700;
-            font-size: 1.2rem;
         }
 
-        .live-indicator {
-            display: inline-flex;
+        .game-box p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 1.5rem;
+        }
+
+        .download-btn {
+            background: var(--gradient-2);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            width: 80%;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .download-btn:hover::before {
+            left: 100%;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 51, 102, 0.4);
+        }
+
+        .share-button {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
             align-items: center;
+            justify-content: center;
+            margin: 0.5rem auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .share-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-1);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .share-button:hover::before {
+            opacity: 1;
+        }
+
+        .share-button svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+            position: relative;
+            z-index: 1;
+        }
+
+        .share-modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            max-width: 90%;
+            width: 320px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .share-modal.active {
+            display: block;
+            animation: modalFadeIn 0.3s ease-out;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -60%);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 17, 39, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 999;
+        }
+
+        .modal-overlay.active {
+            display: block;
+            animation: overlayFadeIn 0.3s ease-out;
+        }
+
+        @keyframes overlayFadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .share-link {
+            display: flex;
             gap: 0.5rem;
-            color: #00ff88;
-            font-size: 0.8rem;
-            margin-top: 0.5rem;
-            animation: pulse 1.5s ease-in-out infinite;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.75rem;
+            border-radius: 12px;
+            margin: 1rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        @keyframes spinEmoji {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .share-link input {
+            flex: 1;
+            border: none;
+            background: transparent;
+            color: var(--text-color);
+            font-size: 0.9rem;
         }
 
-        @keyframes floatAnimation {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        .copy-btn {
+            background: var(--gradient-1);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
         }
 
-        @keyframes pulse {
-            0% { opacity: 0.5; }
-            50% { opacity: 1; }
-            100% { opacity: 0.5; }
+        .copy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(79, 172, 254, 0.3);
         }
 
-        /* Rest of your existing CSS remains the same */
-        [Previous CSS styles for game-box, buttons, modals, etc. remain unchanged]
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .modal-close:hover {
+            transform: rotate(90deg);
+        }
+
+        .share-message {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--success-color);
+            color: var(--primary-color);
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1001;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+        }
+
+        .share-message.active {
+            opacity: 1;
+            animation: messageSlideUp 0.5s ease-out;
+        }
+
+        @keyframes messageSlideUp {
+            from {
+                transform: translate(-50%, 20px);
+                opacity: 0;
+            }
+            to {
+                transform: translate(-50%, 0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
 
         @media (max-width: 768px) {
             .games-grid {
@@ -191,11 +474,6 @@
 
             .logo {
                 font-size: 2.5rem;
-            }
-
-            .prize-claim {
-                font-size: 0.9rem;
-                padding: 0.6rem 1rem;
             }
         }
 
@@ -208,9 +486,8 @@
                 font-size: 2rem;
             }
 
-            .prize-claim {
-                flex-direction: column;
-                gap: 0.5rem;
+            .header-container p {
+                font-size: 1rem;
             }
         }
     </style>
@@ -220,14 +497,7 @@
         <div class="header-container">
             <h1 class="logo">Game<span>Zone</span></h1>
             <p>Your Ultimate Gaming Destination</p>
-            <div class="prize-claim">
-                <div class="prize-animation">🎉</div>
-                <div class="claim-text">Claim Your Prizes, japanreward85-cmyk!</div>
-            </div>
-        </div>
-        <div class="community-counter">
-            <p>Join <span class="counter-number">0</span> Players Worldwide!</p>
-            <div class="live-indicator">● LIVE</div>
+            <div class="user-info">Welcome, japanreward85-cmyk</div>
         </div>
     </header>
 
@@ -246,9 +516,70 @@
                 <button class="download-btn" data-game="game1">Download Now</button>
             </div>
 
-            <!-- Repeat game-box structure for games 2-6 -->
-            <!-- [Previous game boxes 2-6 remain unchanged] -->
+            <!-- Game 2 -->
+            <div class="game-box">
+                <img src="game2.jpg" alt="Kingdom Tactics">
+                <h3>Kingdom Tactics</h3>
+                <p>Build your empire and conquer</p>
+                <button class="share-button" aria-label="Share this game">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/>
+                    </svg>
+                </button>
+                <button class="download-btn" data-game="game2">Download Now</button>
+            </div>
 
+            <!-- Game 3 -->
+            <div class="game-box">
+                <img src="game3.jpg" alt="Speed Masters">
+                <h3>Speed Masters</h3>
+                <p>Race through epic tracks</p>
+                <button class="share-button" aria-label="Share this game">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/>
+                    </svg>
+                </button>
+                <button class="download-btn" data-game="game3">Download Now</button>
+            </div>
+
+            <!-- Game 4 -->
+            <div class="game-box">
+                <img src="game4.jpg" alt="Mind Quest">
+                <h3>Mind Quest</h3>
+                <p>Challenge your brain</p>
+                <button class="share-button" aria-label="Share this game">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/>
+                    </svg>
+                </button>
+                <button class="download-btn" data-game="game4">Download Now</button>
+            </div>
+
+            <!-- Game 5 -->
+            <div class="game-box">
+                <img src="game5.jpg" alt="Dragon Legend">
+                <h3>Dragon Legend</h3>
+                <p>Epic role-playing adventure</p>
+                <button class="share-button" aria-label="Share this game">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/>
+                    </svg>
+                </button>
+                <button class="download-btn" data-game="game5">Download Now</button>
+            </div>
+
+            <!-- Game 6 -->
+            <div class="game-box">
+                <img src="game6.jpg" alt="Sports Champion">
+                <h3>Sports Champion</h3>
+                <p>Compete in global tournaments</p>
+                <button class="share-button" aria-label="Share this game">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/>
+                    </svg>
+                </button>
+                <button class="download-btn" data-game="game6">Download Now</button>
+            </div>
         </section>
     </main>
 
@@ -263,39 +594,8 @@
         <p>Share using your favorite app</p>
     </div>
     <div class="share-message">Link copied to clipboard!</div>
-
-    <script>
+        <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Live counter animation
-            function animateCounter() {
-                const counterElement = document.querySelector('.counter-number');
-                let current = 0;
-                const target = 15000 + Math.floor(Math.random() * 5000);
-                const duration = 2000;
-                const step = timestamp => {
-                    if (!start) start = timestamp;
-                    const progress = timestamp - start;
-                    current = Math.min(Math.floor(target * (progress / duration)), target);
-                    counterElement.textContent = current.toLocaleString();
-                    if (progress < duration) {
-                        window.requestAnimationFrame(step);
-                    }
-                }
-                let start = null;
-                window.requestAnimationFrame(step);
-            }
-
-            // Update counter periodically
-            setInterval(() => {
-                const counterElement = document.querySelector('.counter-number');
-                const currentValue = parseInt(counterElement.textContent.replace(/,/g, ''));
-                const change = Math.floor(Math.random() * 21) - 10; // Random change between -10 and +10
-                counterElement.textContent = (currentValue + change).toLocaleString();
-            }, 3000);
-
-            // Initial counter animation
-            animateCounter();
-
             // Share System
             const shareButtons = document.querySelectorAll('.share-button');
             const modal = document.querySelector('.share-modal');
