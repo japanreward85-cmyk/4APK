@@ -3,507 +3,621 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameZone - Premium Games Hub</title>
-    
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ff3366'><path d='M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z'/></svg>"/>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
-
+    <title>GTA 5 Mobile - Download for Android & iOS | Open World Game</title>
+    <meta name="description" content="Download GTA 5 Mobile for Android and iOS. Experience the ultimate open-world adventure game on your mobile device with enhanced graphics and gameplay.">
+    <link rel="icon" href="https://i.ibb.co/R44NvLdT/t-l-charg.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Russo+One&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #1a1f3d;
-            --secondary-color: #ff3366;
-            --accent-color: #4facfe;
-            --background-color: #0f1127;
-            --text-color: #ffffff;
-            --card-bg: #252a4a;
-            --gradient-1: linear-gradient(45deg, #4facfe 0%, #00f2fe 100%);
-            --gradient-2: linear-gradient(135deg, #ff3366 0%, #ff7750 100%);
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--background-color);
-            color: var(--text-color);
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.9)), 
+                        url('https://i.ibb.co/gLcWLpw5/hero-1920w-z-Tj-Q5-HMq.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
         }
-
-        .header-container {
-            padding: 1rem;
-            text-align: center;
-            position: relative;
-            background: var(--primary-color);
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-
+        
         .logo {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 4rem;
-            font-weight: 900;
-            background: var(--gradient-1);
+            height: 40px;
+            filter: drop-shadow(0 0 5px #ffcc00);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { filter: drop-shadow(0 0 5px #ffcc00); }
+            50% { filter: drop-shadow(0 0 15px #ffcc00); }
+            100% { filter: drop-shadow(0 0 5px #ffcc00); }
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            position: relative;
+            padding: 5px 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #ffcc00;
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        .hero {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        h1 {
+            font-size: 4.5rem;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00;
+            font-family: 'Russo One', sans-serif;
+            letter-spacing: 2px;
+            animation: titleGlow 3s infinite alternate;
+            background: linear-gradient(to right, #ffcc00, #ff9900);
             -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-transform: uppercase;
-            margin: 0.5rem 0;
-            padding-top: 0;
+            -webkit-text-fill-color: transparent;
+            position: relative;
+            padding: 10px;
         }
-
-        .logo span {
-            color: var(--secondary-color);
+        
+        @keyframes titleGlow {
+            0% { text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00; }
+            100% { text-shadow: 0 0 15px #ff9900, 0 0 30px #ff9900; }
         }
-
+        
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            font-weight: 400;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: slideIn 1.5s ease-out;
+            color: #ffcc00;
+            font-family: Arial, sans-serif;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        p {
+            max-width: 800px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+            animation: fadeIn 2s ease-in;
+            font-family: Arial, sans-serif;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .btn {
+            display: flex;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 18px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            min-width: 250px;
+            justify-content: center;
+            border: 2px solid;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+            animation: buttonJump 1s ease infinite alternate;
+        }
+        
+        .btn-apk {
+            color: #ffcc00;
+            border-color: #ffcc00;
+        }
+        
+        .btn-ios {
+            color: #ffcc00;
+            border-color: #ffcc00;
+        }
+        
+        .btn-install {
+            color: #ffcc00;
+            border-color: #ffcc00;
+        }
+        
+        .btn:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 0 20px currentColor, 0 0 40px currentColor;
+            z-index: 2;
+        }
+        
+        @keyframes buttonJump {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-5px); }
+        }
+        
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, currentColor, transparent, currentColor);
+            z-index: -1;
+            transform: translateY(100%);
+            transition: transform 0.5s ease;
+        }
+        
+        .btn:hover:before {
+            transform: translateY(0);
+        }
+        
+        .btn-icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 15px;
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7));
+        }
+        
+        .btn-text {
+            position: relative;
+            z-index: 1;
+            font-family: Arial, sans-serif;
+        }
+        
         /* Slideshow Styles */
         .slideshow-container {
-            max-width: 1200px;
-            margin: 1rem auto;
+            max-width: 1000px;
             position: relative;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 20px;
-            padding: 1rem;
-            overflow: hidden;
-        }
-
-        .slide {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-
-        .slide.active {
-            display: flex;
-            flex-direction: row !important;
-            justify-content: space-between;
-            gap: 1rem;
-            padding: 1rem;
-            width: 100%;
-            opacity: 1;
-        }
-
-        .slide-image {
-            flex: 1;
-            width: calc(33.333% - 1rem);
-            height: 300px;
+            margin: 40px auto;
             border-radius: 10px;
             overflow: hidden;
-            transition: transform 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
         }
-
-        .slide-image:hover {
-            transform: scale(1.02);
+        
+        .mySlides {
+            display: none;
         }
-
-        .slide-image img {
+        
+        .mySlides.active {
+            display: block;
+        }
+        
+        .mySlides img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            border-radius: 10px;
         }
-
+        
+        /* Next & previous buttons */
         .prev, .next {
             cursor: pointer;
             position: absolute;
             top: 50%;
-            transform: translateY(-50%);
-            padding: 1rem;
-            color: white;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: #ffcc00;
             font-weight: bold;
-            font-size: 1.5rem;
-            transition: 0.3s ease;
-            border-radius: 50%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 2;
-            border: none;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-size: 24px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.5);
         }
-
-        .prev { left: 10px; }
-        .next { right: 10px; }
-
+        
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        
+        /* On hover, add a black background color with a little bit see-through */
         .prev:hover, .next:hover {
-            background: var(--secondary-color);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #ff9900;
         }
-
+        
+        /* The dots/bullets/indicators */
         .dots {
             text-align: center;
-            padding: 1rem;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            left: 0;
+            padding: 20px 0;
         }
-
+        
         .dot {
-            height: 12px;
-            width: 12px;
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
             margin: 0 5px;
-            background-color: rgba(255, 255, 255, 0.3);
+            background-color: #bbb;
             border-radius: 50%;
             display: inline-block;
-            transition: 0.3s ease;
-            cursor: pointer;
+            transition: background-color 0.6s ease;
         }
-
-        .dot.active {
-            background-color: var(--secondary-color);
+        
+        .dot.active, .dot:hover {
+            background-color: #ffcc00;
         }
-
-        /* Player Count */
-        .player-count {
-            font-size: 2rem;
-            margin: 2rem 0;
-            font-weight: 700;
-            color: var(--accent-color);
-            text-align: center;
-            animation: fadeInUp 0.8s forwards;
+        
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
         }
-
-        .player-count span {
-            color: var(--secondary-color);
-            font-family: 'Orbitron', sans-serif;
+        
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
         }
-
-        .join-text {
-            font-size: 1.2rem;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2rem;
-            animation: pulse 2s infinite;
-        }
-
-        /* Games Grid */
-        .games-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            padding: 2rem;
-            max-width: 1400px;
+        
+        .game-info {
+            max-width: 1200px;
             margin: 0 auto;
+            padding: 40px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
         }
-
-        .game-box {
-            background: var(--card-bg);
-            border-radius: 20px;
-            padding: 1.5rem;
-            text-align: center;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        
+        .game-details {
+            flex: 1;
+            min-width: 300px;
         }
-
-        .game-box:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent-color);
+        
+        .game-details h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #ffcc00;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+            font-family: 'Russo One', sans-serif;
         }
-
-        .game-box img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 15px;
-            margin-bottom: 1rem;
+        
+        .game-features {
+            list-style: none;
         }
-
-        .game-box h3 {
-            font-size: 1.4rem;
-            margin: 1rem 0;
-            font-family: 'Orbitron', sans-serif;
+        
+        .game-features li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
         }
-
-        .download-btn {
-            background: var(--gradient-2);
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: 600;
-            width: 100%;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        
+        .game-features li:before {
+            content: '➤';
+            position: absolute;
+            left: 0;
+            color: #ffcc00;
+            font-weight: bold;
         }
-
-        .download-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(255, 51, 102, 0.4);
-        }
-
-        @media (max-width: 1024px) {
-            .games-grid {
-                grid-template-columns: repeat(2, 1fr);
+        
+        @media (max-width: 900px) {
+            header {
+                flex-direction: column;
+                padding: 15px;
             }
             
-            .slide.active {
-                flex-direction: row !important;
+            nav ul {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
             
-            .slide-image {
-                height: 200px;
-                min-width: calc(33.333% - 1rem);
+            nav ul li {
+                margin: 8px 12px;
             }
-        }
-
-        @media (max-width: 768px) {
-            .logo {
+            
+            h1 {
                 font-size: 3rem;
             }
             
-            .player-count {
-                font-size: 1.5rem;
+            h2 {
+                font-size: 1.8rem;
             }
             
-            .slide-image {
-                height: 150px;
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                min-width: 280px;
+            }
+            
+            .game-info {
+                flex-direction: column;
             }
         }
-
+        
         @media (max-width: 480px) {
-            .games-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-                padding: 1rem;
+            h1 {
+                font-size: 2.2rem;
             }
             
-            .game-box h3 {
-                font-size: 1.2rem;
+            h2 {
+                font-size: 1.4rem;
             }
             
-            .download-btn {
-                padding: 0.8rem 1.5rem;
-                font-size: 0.9rem;
+            p {
+                font-size: 1rem;
             }
             
-            .slide-image {
-                height: 120px;
+            .btn {
+                padding: 15px 25px;
+                min-width: 250px;
+            }
+            
+            .prev, .next {
+                font-size: 18px;
+                padding: 12px;
             }
         }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
+        
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(255, 204, 0, 0.5);
+            border-radius: 50%;
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
                 opacity: 1;
-                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-100vh) rotate(720deg);
+                opacity: 0;
             }
         }
-
-        @keyframes pulse {
-            0% { opacity: 0.8; }
-            50% { opacity: 1; }
-            100% { opacity: 0.8; }
+        
+        .seo-keywords {
+            display: none;
         }
     </style>
 </head>
 <body>
-    <div class="header-container">
-        <h1 class="logo">Game<span>Zone</span></h1>
+    <div class="particles" id="particles"></div>
+    
+    <header>
+        <img src="https://i.ibb.co/R44NvLdT/t-l-charg.png" alt="GTA 5 Mobile Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">DOWNLOAD APK</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <h1>GTA 5 Mobile</h1>
+        <h2>GTA 5 Android & iOS</h2>
+        <p>On this website you can download GTA 5 Mobile for Android & iOS. Grand Theft Auto V is the successor of the popular Rockstar Games series, and it's now available on your mobile phone or tablet.</p>
+        
+        <div class="buttons">
+            <a href="#" class="btn btn-apk">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Android_robot.svg/1745px-Android_robot.svg.png" alt="Android Icon" class="btn-icon">
+                <span class="btn-text">DOWNLOAD APK</span>
+            </a>
+            <a href="#" class="btn btn-ios">
+                <img src="https://static.vecteezy.com/system/resources/previews/019/766/191/non_2x/apple-logo-apple-icon-transparent-free-png.png" alt="iOS Icon" class="btn-icon">
+                <span class="btn-text">DOWNLOAD iOS</span>
+            </a>
+            <a href="#" class="btn btn-install">
+                <img src="https://static.vecteezy.com/system/resources/previews/042/127/190/non_2x/red-and-white-youtube-logo-app-style-button-with-long-shadow-transparent-background-free-png.png" alt="Install Guide Icon" class="btn-icon">
+                <span class="btn-text">HOW TO INSTALL</span>
+            </a>
+        </div>
+        
+        <!-- Image Slideshow -->
+        <div class="slideshow-container">
+            <div class="mySlides fade active">
+                <img src="https://i.ibb.co/27hYVJxg/bgr-1500w-3-Ww-XP-H3.webp" alt="GTA 5 Mobile Gameplay">
+            </div>
+            
+            <div class="mySlides fade">
+                <img src="https://i.ibb.co/PvVWvn47/hero-1920w-z-Tj-Q5-HMq.jpg" alt="GTA 5 Mobile Action">
+            </div>
+            
+            <div class="mySlides fade">
+                <img src="https://i.ibb.co/pBvNMb3c/unnamed.webp" alt="GTA 5 Mobile Graphics">
+            </div>
+            
+            <div class="mySlides fade">
+                <img src="https://i.ibb.co/kVdDQtXj/gta5.webp" alt="GTA 5 Mobile Open World">
+            </div>
+            
+            <div class="mySlides fade">
+                <img src="https://i.ibb.co/gLcWLpw5/hero-1920w-z-Tj-Q5-HMq.jpg" alt="GTA 5 Mobile Characters">
+            </div>
+            
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+        </div>
+        
+        <div class="dots">
+            <span class="dot active" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+            <span class="dot" onclick="currentSlide(4)"></span> 
+            <span class="dot" onclick="currentSlide(5)"></span> 
+        </div>
+        
+        <div class="game-info">
+            <div class="game-details">
+                <h3>Experience GTA 5 on Mobile</h3>
+                <ul class="game-features">
+                    <li><strong>Open World Adventure:</strong> Explore the vast city of Los Santos and Blaine County with complete freedom on your mobile device.</li>
+                    <li><strong>Enhanced Graphics:</strong> Enjoy improved visuals and optimized performance for mobile platforms with stunning details.</li>
+                    <li><strong>Three Protagonists:</strong> Switch between Michael, Franklin, and Trevor in the most ambitious GTA story yet, now on mobile.</li>
+                    <li><strong>Multiplayer Mode:</strong> Experience GTA Online on your mobile device with friends in this massive multiplayer world.</li>
+                    <li><strong>Regular Updates:</strong> Get access to new missions, vehicles, and events regularly added to keep the gameplay fresh.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEO Keywords (hidden but available for search engines) -->
+    <div class="seo-keywords">
+        GTA 5 Mobile, GTA 5 Android, GTA 5 iOS, Grand Theft Auto V Mobile, download GTA 5 for mobile, 
+        GTA 5 APK, GTA 5 mobile game, open world game, Rockstar Games mobile, action adventure game, 
+        mobile gaming, GTA V for smartphone, GTA V for tablet, free GTA 5 mobile, install GTA 5
     </div>
-
-    <div class="slideshow-container">
-        <!-- GTA 5 Slides -->
-        <div class="slide active">
-            <div class="slide-image"><img src="gta5_1.jpg" alt="GTA 5 Screenshot 1"></div>
-            <div class="slide-image"><img src="gta5_2.jpg" alt="GTA 5 Screenshot 2"></div>
-            <div class="slide-image"><img src="gta5_3.jpg" alt="GTA 5 Screenshot 3"></div>
-        </div>
-
-        <!-- Roblox MOD Slides -->
-        <div class="slide">
-            <div class="slide-image"><img src="roblox_1.jpg" alt="Roblox MOD Screenshot 1"></div>
-            <div class="slide-image"><img src="roblox_2.jpg" alt="Roblox MOD Screenshot 2"></div>
-            <div class="slide-image"><img src="roblox_3.jpg" alt="Roblox MOD Screenshot 3"></div>
-        </div>
-
-        <!-- Fortnite Slides -->
-        <div class="slide">
-            <div class="slide-image"><img src="fortnite_1.jpg" alt="Fortnite Screenshot 1"></div>
-            <div class="slide-image"><img src="fortnite_2.jpg" alt="Fortnite Screenshot 2"></div>
-            <div class="slide-image"><img src="fortnite_3.jpg" alt="Fortnite Screenshot 3"></div>
-        </div>
-
-        <!-- Valorant Slides -->
-        <div class="slide">
-            <div class="slide-image"><img src="valorant_1.jpg" alt="Valorant Screenshot 1"></div>
-            <div class="slide-image"><img src="valorant_2.jpg" alt="Valorant Screenshot 2"></div>
-            <div class="slide-image"><img src="valorant_3.jpg" alt="Valorant Screenshot 3"></div>
-        </div>
-
-        <!-- CS2 Slides -->
-        <div class="slide">
-            <div class="slide-image"><img src="cs2_1.jpg" alt="Counter Strike 2 Screenshot 1"></div>
-            <div class="slide-image"><img src="cs2_2.jpg" alt="Counter Strike 2 Screenshot 2"></div>
-            <div class="slide-image"><img src="cs2_3.jpg" alt="Counter Strike 2 Screenshot 3"></div>
-        </div>
-
-        <!-- MK1 Slides -->
-        <div class="slide">
-            <div class="slide-image"><img src="mk1_1.jpg" alt="Mortal Kombat 1 Screenshot 1"></div>
-            <div class="slide-image"><img src="mk1_2.jpg" alt="Mortal Kombat 1 Screenshot 2"></div>
-            <div class="slide-image"><img src="mk1_3.jpg" alt="Mortal Kombat 1 Screenshot 3"></div>
-        </div>
-
-        <button class="prev" onclick="changeSlide(-1)">❮</button>
-        <button class="next" onclick="changeSlide(1)">❯</button>
-
-        <div class="dots"></div>
-    </div>
-
-    <div class="player-count">
-        <span id="counter">0</span>+ Players
-    </div>
-    <div class="join-text">Join Thousands of Players Worldwide!</div>
-
-    <main class="games-grid">
-        <!-- Game 1 -->
-        <div class="game-box">
-            <img src="game1.jpg" alt="GTA 5">
-            <h3>GTA 5</h3>
-            <p>Experience the criminal underworld of Los Santos</p>
-            <button class="download-btn">Download Now</button>
-        </div>
-
-        <!-- Game 2 -->
-        <div class="game-box">
-            <img src="game2.jpg" alt="Roblox MOD">
-            <h3>Roblox MOD</h3>
-            <p>Enhanced version with exclusive features</p>
-            <button class="download-btn">Download Now</button>
-        </div>
-
-        <!-- Game 3 -->
-        <div class="game-box">
-            <img src="game3.jpg" alt="Fortnite">
-            <h3>Fortnite</h3>
-            <p>Battle royale with unique building mechanics</p>
-            <button class="download-btn">Download Now</button>
-        </div>
-
-        <!-- Game 4 -->
-        <div class="game-box">
-            <img src="game4.jpg" alt="Valorant">
-            <h3>Valorant</h3>
-            <p>Tactical shooter with unique abilities</p>
-            <button class="download-btn">Download Now</button>
-        </div>
-
-        <!-- Game 5 -->
-        <div class="game-box">
-            <img src="game5.jpg" alt="Counter Strike 2">
-            <h3>Counter Strike 2</h3>
-            <p>Next generation tactical team shooter</p>
-            <button class="download-btn">Download Now</button>
-        </div>
-
-        <!-- Game 6 -->
-        <div class="game-box">
-            <img src="game6.jpg" alt="Mortal Kombat 1">
-            <h3>Mortal Kombat 1</h3>
-            <p>Ultimate fighting with brutal fatalities</p>
-            <button class="download-btn">Download Now</button>
-        </div>
-    </main>
 
     <script>
-        let slideIndex = 1;
-        let autoSlideInterval;
-        const totalSlides = document.querySelectorAll('.slide').length;
+        // Create floating particles for background effect
+        document.addEventListener('DOMContentLoaded', function() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random properties
+                const size = Math.random() * 5 + 2;
+                const posX = Math.random() * 100;
+                const posY = Math.random() * 100;
+                const delay = Math.random() * 15;
+                const duration = Math.random() * 10 + 15;
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}vw`;
+                particle.style.top = `${posY}vh`;
+                particle.style.animationDelay = `${delay}s`;
+                particle.style.animationDuration = `${duration}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+            
+            // Initialize slideshow
+            showSlides(slideIndex);
+        });
         
-        // Create dots
-        const dotsContainer = document.querySelector('.dots');
-        for(let i = 0; i < totalSlides; i++) {
-            const dot = document.createElement('span');
-            dot.className = 'dot';
-            dot.onclick = () => currentSlide(i + 1);
-            dotsContainer.appendChild(dot);
-        }
-
-        showSlides(slideIndex);
-        startAutoSlide();
-
-        function changeSlide(n) {
+        // Slideshow functionality
+        let slideIndex = 1;
+        let slideInterval;
+        
+        function plusSlides(n) {
+            clearInterval(slideInterval);
             showSlides(slideIndex += n);
-            resetAutoSlide();
+            restartSlideInterval();
         }
-
+        
         function currentSlide(n) {
+            clearInterval(slideInterval);
             showSlides(slideIndex = n);
-            resetAutoSlide();
+            restartSlideInterval();
         }
-
+        
         function showSlides(n) {
-            const slides = document.getElementsByClassName("slide");
-            const dots = document.getElementsByClassName("dot");
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
             
             if (n > slides.length) {slideIndex = 1}
             if (n < 1) {slideIndex = slides.length}
             
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].classList.remove('active');
-            }
-            for (let i = 0; i < dots.length; i++) {
-                dots[i].classList.remove('active');
+            for (i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
             }
             
-            slides[slideIndex-1].classList.add('active');
-            dots[slideIndex-1].classList.add('active');
-        }
-
-        function startAutoSlide() {
-            autoSlideInterval = setInterval(() => {
-                changeSlide(1);
-            }, 5000);
-        }
-
-        function resetAutoSlide() {
-            clearInterval(autoSlideInterval);
-            startAutoSlide();
-        }
-
-        // Player counter animation
-        document.addEventListener('DOMContentLoaded', function() {
-            const counter = document.getElementById('counter');
-            const targetNumber = 12698;
-            let current = 0;
+            for (i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
             
-            const animateValue = (timestamp) => {
-                if (!animateValue.start) animateValue.start = timestamp;
-                const progress = timestamp - animateValue.start;
-                const duration = 2000;
-                
-                if (progress < duration) {
-                    current = Math.floor((targetNumber * progress) / duration);
-                    counter.textContent = current.toLocaleString();
-                    requestAnimationFrame(animateValue);
-                } else {
-                    counter.textContent = targetNumber.toLocaleString();
-                }
-            };
-            
-            requestAnimationFrame(animateValue);
-
-            // Download button click effect
-            document.querySelectorAll('.download-btn').forEach(button => {
-                button.addEventListener('click', function() {
-                    this.style.transform = 'scale(0.95)';
-                    setTimeout(() => {
-                        this.style.transform = '';
-                    }, 200);
-                });
-            });
-        });
+            slides[slideIndex-1].classList.add("active");
+            dots[slideIndex-1].classList.add("active");
+        }
+        
+        function restartSlideInterval() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(() => {
+                plusSlides(1);
+            }, 5000); // Change image every 5 seconds
+        }
+        
+        // Start the slideshow autoplay
+        restartSlideInterval();
     </script>
 </body>
 </html>
