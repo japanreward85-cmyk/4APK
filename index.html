@@ -1,623 +1,1213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GTA 5 Mobile - Download for Android & iOS | Open World Game</title>
-    <meta name="description" content="Download GTA 5 Mobile for Android and iOS. Experience the ultimate open-world adventure game on your mobile device with enhanced graphics and gameplay.">
-    <link rel="icon" href="https://i.ibb.co/R44NvLdT/t-l-charg.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Russo+One&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.9)), 
-                        url('https://i.ibb.co/gLcWLpw5/hero-1920w-z-Tj-Q5-HMq.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: white;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            overflow-x: hidden;
-            font-family: Arial, sans-serif;
-        }
-        
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            background-color: rgba(0, 0, 0, 0.8);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .logo {
-            height: 40px;
-            filter: drop-shadow(0 0 5px #ffcc00);
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { filter: drop-shadow(0 0 5px #ffcc00); }
-            50% { filter: drop-shadow(0 0 15px #ffcc00); }
-            100% { filter: drop-shadow(0 0 5px #ffcc00); }
-        }
-        
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-        
-        nav ul li {
-            margin: 0 15px;
-        }
-        
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
-            position: relative;
-            padding: 5px 0;
-            font-family: Arial, sans-serif;
-        }
-        
-        nav ul li a:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: #ffcc00;
-            transition: width 0.3s;
-        }
-        
-        nav ul li a:hover {
-            color: #ffcc00;
-        }
-        
-        nav ul li a:hover:after {
-            width: 100%;
-        }
-        
-        .hero {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 40px 20px;
-        }
-        
-        h1 {
-            font-size: 4.5rem;
-            margin-bottom: 15px;
-            text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00;
-            font-family: 'Russo One', sans-serif;
-            letter-spacing: 2px;
-            animation: titleGlow 3s infinite alternate;
-            background: linear-gradient(to right, #ffcc00, #ff9900);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            position: relative;
-            padding: 10px;
-        }
-        
-        @keyframes titleGlow {
-            0% { text-shadow: 0 0 10px #ffcc00, 0 0 20px #ffcc00; }
-            100% { text-shadow: 0 0 15px #ff9900, 0 0 30px #ff9900; }
-        }
-        
-        h2 {
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-            font-weight: 400;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            animation: slideIn 1.5s ease-out;
-            color: #ffcc00;
-            font-family: Arial, sans-serif;
-        }
-        
-        @keyframes slideIn {
-            from { transform: translateY(-30px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-        
-        p {
-            max-width: 800px;
-            margin-bottom: 40px;
-            line-height: 1.6;
-            font-size: 1.2rem;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
-            animation: fadeIn 2s ease-in;
-            font-family: Arial, sans-serif;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        .buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-            margin-bottom: 50px;
-        }
-        
-        .btn {
-            display: flex;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 18px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s;
-            min-width: 250px;
-            justify-content: center;
-            border: 2px solid;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
-            animation: buttonJump 1s ease infinite alternate;
-        }
-        
-        .btn-apk {
-            color: #ffcc00;
-            border-color: #ffcc00;
-        }
-        
-        .btn-ios {
-            color: #ffcc00;
-            border-color: #ffcc00;
-        }
-        
-        .btn-install {
-            color: #ffcc00;
-            border-color: #ffcc00;
-        }
-        
-        .btn:hover {
-            transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 0 20px currentColor, 0 0 40px currentColor;
-            z-index: 2;
-        }
-        
-        @keyframes buttonJump {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-5px); }
-        }
-        
-        .btn:before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            background: linear-gradient(45deg, currentColor, transparent, currentColor);
-            z-index: -1;
-            transform: translateY(100%);
-            transition: transform 0.5s ease;
-        }
-        
-        .btn:hover:before {
-            transform: translateY(0);
-        }
-        
-        .btn-icon {
-            width: 30px;
-            height: 30px;
-            margin-right: 15px;
-            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7));
-        }
-        
-        .btn-text {
-            position: relative;
-            z-index: 1;
-            font-family: Arial, sans-serif;
-        }
-        
-        /* Slideshow Styles */
-        .slideshow-container {
-            max-width: 1000px;
-            position: relative;
-            margin: 40px auto;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
-        }
-        
-        .mySlides {
-            display: none;
-        }
-        
-        .mySlides.active {
-            display: block;
-        }
-        
-        .mySlides img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-        
-        /* Next & previous buttons */
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            width: auto;
-            padding: 16px;
-            margin-top: -22px;
-            color: #ffcc00;
-            font-weight: bold;
-            font-size: 24px;
-            transition: 0.6s ease;
-            border-radius: 0 3px 3px 0;
-            user-select: none;
-            background-color: rgba(0, 0, 0, 0.5);
-        }
-        
-        /* Position the "next button" to the right */
-        .next {
-            right: 0;
-            border-radius: 3px 0 0 3px;
-        }
-        
-        /* On hover, add a black background color with a little bit see-through */
-        .prev:hover, .next:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-            color: #ff9900;
-        }
-        
-        /* The dots/bullets/indicators */
-        .dots {
-            text-align: center;
-            padding: 20px 0;
-        }
-        
-        .dot {
-            cursor: pointer;
-            height: 15px;
-            width: 15px;
-            margin: 0 5px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.6s ease;
-        }
-        
-        .dot.active, .dot:hover {
-            background-color: #ffcc00;
-        }
-        
-        /* Fading animation */
-        .fade {
-            animation-name: fade;
-            animation-duration: 1.5s;
-        }
-        
-        @keyframes fade {
-            from {opacity: .4} 
-            to {opacity: 1}
-        }
-        
-        .game-info {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 40px;
-        }
-        
-        .game-details {
-            flex: 1;
-            min-width: 300px;
-        }
-        
-        .game-details h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #ffcc00;
-            text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
-            font-family: 'Russo One', sans-serif;
-        }
-        
-        .game-features {
-            list-style: none;
-        }
-        
-        .game-features li {
-            margin-bottom: 15px;
-            padding-left: 30px;
-            position: relative;
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-        }
-        
-        .game-features li:before {
-            content: '➤';
-            position: absolute;
-            left: 0;
-            color: #ffcc00;
-            font-weight: bold;
-        }
-        
-        @media (max-width: 900px) {
-            header {
-                flex-direction: column;
-                padding: 15px;
-            }
-            
-            nav ul {
-                margin-top: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            nav ul li {
-                margin: 8px 12px;
-            }
-            
-            h1 {
-                font-size: 3rem;
-            }
-            
-            h2 {
-                font-size: 1.8rem;
-            }
-            
-            .buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .btn {
-                min-width: 280px;
-            }
-            
-            .game-info {
-                flex-direction: column;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2.2rem;
-            }
-            
-            h2 {
-                font-size: 1.4rem;
-            }
-            
-            p {
-                font-size: 1rem;
-            }
-            
-            .btn {
-                padding: 15px 25px;
-                min-width: 250px;
-            }
-            
-            .prev, .next {
-                font-size: 18px;
-                padding: 12px;
-            }
-        }
-        
-        .particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
-        
-        .particle {
-            position: absolute;
-            background: rgba(255, 204, 0, 0.5);
-            border-radius: 50%;
-            animation: float 15s infinite linear;
-        }
-        
-        @keyframes float {
-            0% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100vh) rotate(720deg);
-                opacity: 0;
-            }
-        }
-        
-        .seo-keywords {
-            display: none;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>4APK - Premium Modded APK Games Download | Unlimited Money & Resources</title>
+  <meta name="description" content="Download premium modded APK games with unlimited money, unlocked features, and no ads. Get the latest modded versions of popular mobile games for Android.">
+  <meta name="keywords" content="modded apk, apk mod, game mods, unlimited money games, modded games android, premium apk, free download games, 4apk, mod apk games, android game mods, hacked games, unlocked games">
+  <meta name="author" content="4APK Mobile Games">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Social Media Meta Tags -->
+  <meta property="og:title" content="4APK - Premium Modded APK Games Download">
+  <meta property="og:description" content="Download premium modded APK games with unlimited money, unlocked features, and no ads.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://4apk.netlify.app">
+  <meta property="og:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRUUCc_i1GGE5OxiRyn1eDmbGIuH6I0ZOzRf5nTbhszGBJbssYu9DHbTgOyOHpabKQEyT0Iij3WwgdCWyWZthweWu_9yUM4QDEuy3oYfEXdYHCTdvvlgOxtm-WxTDDYZAPYzljSt2crKb22bwcVVuqaA7Bu0HNfgnqFPdh-qEFKJpKlNvVGIBIUP1g7E8/w945-h600-p-k-no-nu/logo-design-for-mobile-games-monster-bol_Oy1aVITVR4OvhLqtnAzezQ_sD0t77fBSMaYORn3_GKLgw%20%281%29.jpeg">
+  <meta property="og:site_name" content="4APK Mobile Games">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="4APK - Premium Modded APK Games Download">
+  <meta name="twitter:description" content="Download premium modded APK games with unlimited money, unlocked features, and no ads.">
+  <meta name="twitter:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRUUCc_i1GGE5OxiRyn1eDmbGIuH6I0ZOzRf5nTbhszGBJbssYu9DHbTgOyOHpabKQEyT0Iij3WwgdCWyWZthweWu_9yUM4QDEuy3oYfEXdYHCTdvvlgOxtm-WxTDDYZAPYzljSt2crKb22bwcVVuqaA7Bu0HNfgnqFPdh-qEFKJpKlNvVGIBIUP1g7E8/w945-h600-p-k-no-nu/logo-design-for-mobile-games-monster-bol_Oy1aVITVR4OvhLqtnAzezQ_sD0t77fBSMaYORn3_GKLgw%20%281%29.jpeg">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://4apk.netlify.app">
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "4APK Mobile Games",
+    "url": "https://4apk.netlify.app",
+    "description": "Download premium modded APK games with unlimited money, unlocked features, and no ads.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://4apk.netlify.app/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  
+  <style>
+    :root {
+      --bg-dark: #0a0a12;
+      --card-dark: #161622;
+      --accent-primary: #6c5ce7;
+      --accent-secondary: #00cec9;
+      --text-light: #f8f9fa;
+      --text-gray: #adb5bd;
+      --border-dark: #2d2d42;
+      --header-height: 80px;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700&display=swap');
+
+    body {
+      /* Professional modern dark background */
+      background: linear-gradient(135deg, #0c0e15 0%, #141824 50%, #0c0e15 100%);
+      font-family: 'Oxanium', sans-serif;
+      color: var(--text-light);
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      overflow-x: hidden;
+      position: relative;
+    }
+    
+    /* Subtle grid pattern for professional look */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        linear-gradient(rgba(45, 45, 66, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(45, 45, 66, 0.1) 1px, transparent 1px);
+      background-size: 30px 30px;
+      z-index: -1;
+      opacity: 0.6;
+    }
+    
+    /* Subtle animated gradient overlay */
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(125deg, transparent 0%, rgba(108, 92, 231, 0.05) 50%, transparent 100%);
+      z-index: -1;
+      animation: gradientShift 15s ease infinite;
+      opacity: 0.7;
+    }
+    
+    @keyframes gradientShift {
+      0% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-20px) translateX(20px); }
+      100% { transform: translateY(0) translateX(0); }
+    }
+
+    /* Header with logo */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: var(--header-height);
+      background: rgba(12, 14, 21, 0.85);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(109, 92, 231, 0.2);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin: 0 auto;
+    }
+
+    .logo-img {
+      height: 40px;
+      width: auto;
+    }
+
+    .logo-text {
+      font-size: 1.8rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* Main content */
+    .main-container {
+      padding: 2rem 5%;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    /* Hero section with neon title */
+    .hero {
+      text-align: center;
+      padding: 3rem 0;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin: 0;
+      font-weight: 700;
+      text-shadow: 
+        0 0 5px #fff,
+        0 0 10px #fff,
+        0 0 20px #00cec9,
+        0 0 30px #00cec9,
+        0 0 40px #00cec9,
+        0 0 55px #00cec9,
+        0 0 75px #00cec9;
+      color: #fff;
+      letter-spacing: 2px;
+      animation: neonPulse 2s ease-in-out infinite alternate;
+      line-height: 1.2;
+    }
+    
+    @keyframes neonPulse {
+      from {
+        text-shadow: 
+          0 0 5px #fff,
+          0 0 10px #fff,
+          0 0 20px #00cec9,
+          0 0 30px #00cec9,
+          0 0 40px #00cec9,
+          0 0 55px #00cec9,
+          0 0 75px #00cec9;
+      }
+      to {
+        text-shadow: 
+          0 0 5px #fff,
+          0 0 10px #fff,
+          0 0 20px #6c5ce7,
+          0 0 30px #6c5ce7,
+          0 0 40px #6c5ce7,
+          0 0 55px #6c5ce7,
+          0 0 75px #6c5ce7;
+      }
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-gray);
+      max-width: 700px;
+      margin: 1rem auto 2rem;
+    }
+
+    /* Enhanced Search bar */
+    .search-container {
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      position: relative;
+    }
+
+    #searchInput {
+      width: 100%;
+      padding: 18px 25px;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      border: none;
+      background: rgba(22, 22, 34, 0.7);
+      backdrop-filter: blur(10px);
+      color: white;
+      box-shadow: 
+        0 0 15px rgba(108, 92, 231, 0.3),
+        inset 0 0 10px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      text-align: center;
+      font-weight: 600;
+      border: 1px solid rgba(108, 92, 231, 0.3);
+    }
+
+    #searchInput:focus {
+      outline: none;
+      background: rgba(30, 30, 60, 0.8);
+      box-shadow: 
+        0 0 20px rgba(108, 92, 231, 0.5),
+        0 0 30px rgba(108, 92, 231, 0.3),
+        inset 0 0 15px rgba(0, 0, 0, 0.5);
+      transform: scale(1.02);
+      border: 1px solid rgba(108, 92, 231, 0.6);
+    }
+
+    #searchInput::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+      text-align: center;
+      font-weight: 500;
+    }
+    
+    /* Search icon */
+    .search-container::before {
+      content: "🔍";
+      position: absolute;
+      left: 25px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgba(255, 255, 255, 0.7);
+      pointer-events: none;
+      font-size: 1.2rem;
+    }
+    
+    /* Search button for mobile */
+    .search-button {
+      display: none;
+      position: absolute;
+      right: 25px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      border: none;
+      color: rgba(255, 255, 255, 0.7);
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+    
+    @media (max-width: 768px) {
+      .search-button {
+        display: block;
+      }
+    }
+
+    /* Games grid */
+    .app-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 25px;
+      padding: 20px 0;
+      justify-items: center;
+    }
+
+    .app-card {
+      background: linear-gradient(145deg, rgba(22, 22, 34, 0.9), rgba(25, 25, 39, 0.9));
+      border-radius: 16px;
+      padding: 25px;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      border: 1px solid rgba(108, 92, 231, 0.1);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      max-width: 240px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      backdrop-filter: blur(5px);
+    }
+
+    .app-card::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+      z-index: -1;
+      border-radius: 18px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .app-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 
+        0 15px 30px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(108, 92, 231, 0.2);
+      border-color: rgba(108, 92, 231, 0.3);
+    }
+
+    .app-card:hover::before {
+      opacity: 1;
+    }
+
+    .app-card img {
+      width: 100%;
+      height: 120px;
+      object-fit: contain;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.3));
+      transition: all 0.3s ease;
+    }
+    
+    .app-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .app-card h3 {
+      font-size: 1.3rem;
+      margin: 0 0 8px;
+      color: white;
+      text-align: center;
+      width: 100%;
+      font-weight: 700;
+    }
+
+    .app-card p {
+      color: var(--text-gray);
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+      text-align: center;
+      width: 100%;
+    }
+    
+    /* Stats section for downloads and rating */
+    .app-stats {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 15px;
+      font-size: 0.85rem;
+      color: var(--text-gray);
+    }
+    
+    .downloads, .rating {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .star-rating {
+      color: #FFD700;
+      font-weight: bold;
+    }
+
+    .install-btn {
+      display: inline-block;
+      background: linear-gradient(45deg, var(--accent-primary), var(--accent-secondary));
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      text-align: center;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.1),
+        0 0 15px rgba(108, 92, 231, 0.3);
+      border: none;
+      width: 100%;
+      max-width: 200px;
+      position: relative;
+      overflow: hidden;
+      margin-top: 5px;
+    }
+    
+    .install-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.8s;
+    }
+    
+    .install-btn:hover::before {
+      left: 100%;
+    }
+
+    .install-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 
+        0 7px 14px rgba(108, 92, 231, 0.3),
+        0 0 20px rgba(108, 92, 231, 0.5);
+    }
+
+    /* Badge for modded games */
+    .mod-badge {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: linear-gradient(45deg, #ff7675, #d63031);
+      color: white;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 0 10px rgba(255, 118, 117, 0.5);
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+      color: var(--text-gray);
+      font-size: 0.9rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(12, 14, 21, 0.5);
+      backdrop-filter: blur(5px);
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .header {
+        padding: 0 20px;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .app-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo-text {
+        font-size: 1.4rem;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .app-card {
+        padding: 20px;
+      }
+    }
+    
+    /* Ensure all content is visible */
+    .highlight {
+      color: var(--accent-secondary);
+      font-weight: bold;
+    }
+  </style>
+<link rel="me" href="https://www.blogger.com/profile/09517432901123867776" />
+<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
+<meta name='google-adsense-platform-domain' content='blogspot.com'/>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7347483501679910&host=ca-host-pub-1556223355139109" crossorigin="anonymous"></script>
+
+<!-- data-ad-client=ca-pub-7347483501679910 -->
 </head>
 <body>
-    <div class="particles" id="particles"></div>
-    
-    <header>
-        <img src="https://i.ibb.co/R44NvLdT/t-l-charg.png" alt="GTA 5 Mobile Logo" class="logo">
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#"></a></li>
-            </ul>
-        </nav>
-    </header>
-    
+  <!-- Header with logo -->
+  <header class="header">
+    <div class="logo-container">
+      <!-- Replace with your actual logo image path -->
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiRUUCc_i1GGE5OxiRyn1eDmbGIuH6I0ZOzRf5nTbhszGBJbssYu9DHbTgOyOHpabKQEyT0Iij3WwgdCWyWZthweWu_9yUM4QDEuy3oYfEXdYHCTdvvlgOxtm-WxTDDYZAPYzljSt2crKb22bwcVVuqaA7Bu0HNfgnqFPdh-qEFKJpKlNvVGIBIUP1g7E8/w945-h600-p-k-no-nu/logo-design-for-mobile-games-monster-bol_Oy1aVITVR4OvhLqtnAzezQ_sD0t77fBSMaYORn3_GKLgw%20%281%29.jpeg" alt="4APK Mobile Games Logo - Premium Modded APK Games" class="logo-img">
+      <span class="logo-text">4APK Mobile Games</span>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <!-- Hero section -->
     <section class="hero">
-        <h1>GTA 5 Mobile</h1>
-        <h2>GTA 5 Android & iOS</h2>
-        <p>On this website you can download GTA 5 Mobile for Android & iOS. Grand Theft Auto V is the successor of the popular Rockstar Games series, and it's now available on your mobile phone or tablet.</p>
-        
-        <div class="buttons">
-            <a href="https://installchecker.com/cl/i/7j71mk" class="btn btn-apk" target="_blank" rel="noopener noreferrer">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Android_robot.svg/1745px-Android_robot.svg.png" alt="Android Icon" class="btn-icon">
-                <span class="btn-text">DOWNLOAD APK</span>
-            </a>
-            <a href="https://installchecker.com/cl/i/7j71mk" class="btn btn-ios" target="_blank" rel="noopener noreferrer">
-                <img src="https://static.vecteezy.com/system/resources/previews/019/766/191/non_2x/apple-logo-apple-icon-transparent-free-png.png" alt="iOS Icon" class="btn-icon">
-                <span class="btn-text">DOWNLOAD iOS</span>
-            </a>
-            <a href="https://installchecker.com/cl/i/7j71mk" class="btn btn-install" target="_blank" rel="noopener noreferrer">
-                <img src="https://static.vecteezy.com/system/resources/previews/042/127/190/non_2x/red-and-white-youtube-logo-app-style-button-with-long-shadow-transparent-background-free-png.png" alt="Install Guide Icon" class="btn-icon">
-                <span class="btn-text">HOW TO INSTALL</span>
-            </a>
-        </div>
-        
-        <!-- Image Slideshow -->
-        <div class="slideshow-container">
-            <div class="mySlides fade active">
-                <img src="https://i.ibb.co/27hYVJxg/bgr-1500w-3-Ww-XP-H3.webp" alt="GTA 5 Mobile Gameplay">
-            </div>
-            
-            <div class="mySlides fade">
-                <img src="https://i.ibb.co/PvVWvn47/hero-1920w-z-Tj-Q5-HMq.jpg" alt="GTA 5 Mobile Action">
-            </div>
-            
-            <div class="mySlides fade">
-                <img src="https://i.ibb.co/pBvNMb3c/unnamed.webp" alt="GTA 5 Mobile Graphics">
-            </div>
-            
-            <div class="mySlides fade">
-                <img src="https://i.ibb.co/kVdDQtXj/gta5.webp" alt="GTA 5 Mobile Open World">
-            </div>
-            
-            <div class="mySlides fade">
-                <img src="https://i.ibb.co/gLcWLpw5/hero-1920w-z-Tj-Q5-HMq.jpg" alt="GTA 5 Mobile Characters">
-            </div>
-            
-            <a class="prev" onclick="plusSlides(-1)">❮</a>
-            <a class="next" onclick="plusSlides(1)">❯</a>
-        </div>
-        
-        <div class="dots">
-            <span class="dot active" onclick="currentSlide(1)"></span> 
-            <span class="dot" onclick="currentSlide(2)"></span> 
-            <span class="dot" onclick="currentSlide(3)"></span> 
-            <span class="dot" onclick="currentSlide(4)"></span> 
-            <span class="dot" onclick="currentSlide(5)"></span> 
-        </div>
-        
-        <div class="game-info">
-            <div class="game-details">
-                <h3>Experience GTA 5 on Mobile</h3>
-                <ul class="game-features">
-                    <li><strong>Open World Adventure:</strong> Explore the vast city of Los Santos and Blaine County with complete freedom on your mobile device.</li>
-                    <li><strong>Enhanced Graphics:</strong> Enjoy improved visuals and optimized performance for mobile platforms with stunning details.</li>
-                    <li><strong>Three Protagonists:</strong> Switch between Michael, Franklin, and Trevor in the most ambitious GTA story yet, now on mobile.</li>
-                    <li><strong>Multiplayer Mode:</strong> Experience GTA Online on your mobile device with friends in this massive multiplayer world.</li>
-                    <li><strong>Regular Updates:</strong> Get access to new missions, vehicles, and events regularly added to keep the gameplay fresh.</li>
-                </ul>
-            </div>
-        </div>
+      <h1>Premium Modded Mobile Games</h1>
+      <p>Download the best modded games with unlimited resources, unlocked features, and premium gameplay</p>
     </section>
 
-    <!-- SEO Keywords (hidden but available for search engines) -->
-    <div class="seo-keywords">
-        GTA 5 Mobile, GTA 5 Android, GTA 5 iOS, Grand Theft Auto V Mobile, download GTA 5 for mobile, 
-        GTA 5 APK, GTA 5 mobile game, open world game, Rockstar Games mobile, action adventure game, 
-        mobile gaming, GTA V for smartphone, GTA V for tablet, free GTA 5 mobile, install GTA 5
+    <!-- Search bar -->
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search for modded games..." onkeyup="filterGames()" aria-label="Search for modded APK games">
+      <button class="search-button" onclick="filterGames()">🔍</button>
     </div>
 
-    <script>
-        // Create floating particles for background effect
-        document.addEventListener('DOMContentLoaded', function() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 50;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                
-                // Random properties
-                const size = Math.random() * 5 + 2;
-                const posX = Math.random() * 100;
-                const posY = Math.random() * 100;
-                const delay = Math.random() * 15;
-                const duration = Math.random() * 10 + 15;
-                
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                particle.style.left = `${posX}vw`;
-                particle.style.top = `${posY}vh`;
-                particle.style.animationDelay = `${delay}s`;
-                particle.style.animationDuration = `${duration}s`;
-                
-                particlesContainer.appendChild(particle);
-            }
-            
-            // Initialize slideshow
-            showSlides(slideIndex);
+    <!-- Games grid -->
+    <div class="app-container" id="gameList">
+      <!-- All your existing game cards with download counts and ratings added -->
+      <!-- GTA 5 -->
+      <div class="app-card" data-name="GTA 5">
+        <span class="mod-badge">MOD</span>
+        <img src="https://upload.wikimedia.org/wikipedia/en/a/a5/Grand_Theft_Auto_V.png" alt="GTA 5 Mod APK - Unlimited Money" loading="lazy">
+        <h3>GTA 5</h3>
+        <p>Open-world action adventure with unlimited money</p>
+        <div class="app-stats">
+          <div class="downloads">📥 50M+</div>
+          <div class="rating">⭐ <span class="star-rating">4.7</span></div>
+        </div>
+        <a href="iziwizi" class="install-btn">Download Mod</a>
+      </div>
+
+      <!-- Township -->
+      <div class="app-card" data-name="Township Mod">
+        <span class="mod-badge">MOD</span>
+        <img src="https://modyolo.com/wp-content/uploads/2021/12/township-150x150.png" alt="Township Mod APK - Unlimited Cash" loading="lazy">
+        <h3>Township Mod</h3>
+        <p>Build your dream city with unlimited cash</p>
+        <div class="app-stats">
+          <div class="downloads">📥 100M+</div>
+          <div class="rating">⭐ <span class="star-rating">4.4</span></div>
+        </div>
+        <a href="iziwizi" class="install-btn">Download Mod</a>
+      </div>
+
+      <!-- Fortnite -->
+      <div class="app-card" data-name="Fortnite Mod">
+        <span class="mod-badge">MOD</span>
+        <img src="https://modyolo.com/wp-content/uploads/2021/10/fortnite-mobile-150x150.jpg" alt="Fortnite Mod APK - Unlimited V-Bucks" loading="lazy">
+        <h3>Fortnite Mod</h3>
+        <p>Battle royale with unlimited V-Bucks</p>
+        <div class="app-stats">
+          <div class="downloads">📥 200M+</div>
+          <div class="rating">⭐ <span class="star-rating">4.3</span></div>
+        </div>
+        <a href="iziwizi" class="install-btn">Download Mod</a>
+      </div>
+      
+      <!-- Pubg Mobile -->
+      <div class="app-card" data-name="PUBG MOBILE Mod">
+        <span class="mod-badge">MOD</span>
+        <img src="https://modyolo.com/wp-content/uploads/2021/09/pubg-mobile-1-5-ignition-150x150.jpg" alt="PUBG MOBILE Mod APK - Unlimited UC, Aimbot" loading="lazy">
+        <h3>PUBG MOBILE Mod</h3>
+        <p>Unlimited UC • Aimbot • No Recoil</p>
+        <div class="app-stats">
+          <div class="downloads">📥 1B+</div>
+          <div class="rating">⭐ <span class="star-rating">4.1</span></div>
+        </div>
+        <a href="iziwizi" class="install-btn">Download Mod</a>
+      </div>
+
+      <!-- Efootball -->
+      <div class="app-card" data-name="Efootball Mobile Mod">
+        <span class="mod-badge">MOD</span>
+        <img src="https://modyolo.com/wp-content/uploads/2022/09/efootball-2023--150x150.png" alt="Efootball Mobile Mod APK - Unlimited Coins" loading="lazy">
+        <h3>Efootball Mobile Mod</h3>
+        <p>Unlimited coins and all players unlocked</p>
+        <div class="app-stats">
+          <div class="downloads">📥 50M+</div>
+          <div class="rating">⭐ <span class="star-rating">4.2</span></div>
+        </div>
+        <a href="iziwizi" class="install-btn">Download Mod</a>
+      </div>
+
+      <!-- Roblox -->
+      <div class="app-card" data-name="Roblox Mod APK">
+        <span class="mod-badge">MOD</span>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Roblox_Logo_2022.jpg" alt="Roblox Mod APK - Unlimited Robux" loading="lazy">
+        <h3>Roblox Mod APK</h3>
+        <p>Unlimited Robux and premium features</p>
+        <div class="app-stats">
+          <div class="downloads">📥 500M+</div>
+          <div class="rating">⭐ <span class="star-rating">4.5</span></div>
+        </div>
+        <a href="iziwizi" class="install-btn">Download Mod</a>
+      </div>
+
+      <!-- EA FC Mobile -->
+      <div class="app-card" data-name="EA FC Mobile">
+        <span class="mod-badge">MOD</span>
+        <img src="https://modyolo.com/wp-content/uploads/2024/04/fifa-150x150.png" alt="EA FC Mobile Mod APK - Unlimited FIFA Points" loading="lazy">
+        <h3>EA FC Mobile</h3>
+        <p>Unlimited FIFA points and players</p>
+        <div class="app-stats">
+          <div class="downloads">📥 30M+</div>
+          <div class="rating">⭐ <span class="star-rating">4.3</span></div>
+        </div>
+        <a href="iziwizi" class="install-btn">Download Mod</a>
+      </div>
+
+      
+      <div class="app-card" data-name="REMATCH Soccer">
+        <span class="mod-badge">MOD</span>
+        <img src="https://images.appmagic.rocks/?uri=https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/e0/f6/47/e0f64744-d239-a286-93b8-97edf7ce8beb/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/0x98h.jpg" alt="REMATCH Soccer Mod APK - Unlimited Energy" loading="lazy">
+        <h3>REMATCH Soccer</h3>
+        <p>⚡ Unlimited Energy | ⭐ All Players | 💰 Infinite Coins | 🔄 Max Level</p>
+        <div class="app-stats">
+          <div class="downloads">📥 5M+</div>
+          <div class="rating">⭐ <span class="star-rating">4.6</span></div>
+        </div>
+        <a href="iziwizi" class="install-btn">Download Mod</a>
+      </div>
+
+      <!-- Minecraft -->
+      <div class="app-card" data-name="Minecraft Mod">
+        <span class="mod-badge">MOD</span>
+        <img src="https://modyolo.com/wp-content/uploads/2021/09/minecraft-150x150.jpg" alt="Minecraft Mod APK - Premium Unlocked" loading="lazy">
+        <h3>Minecraft Mod</h3>
+        <p>Premium unlocked with all skins</p>
+        <div class="app-stats">
+          <div class="downloads">📥 500M+</div>
+          <div class="rating">⭐ <span class="star-rating">4.7</span></div>
+        </div>
+        <a href="iziwizi" class="install-btn">Download Mod</a>
+      </div>
+
+      <!-- Baseball 9 -->
+      <div class="app-card" data-name="Baseball 9 Mod">
+        <span class="mod-badge">MOD</span>
+        <img src="https://play-lh.googleusercontent.com/Y9GghCslNNk-nWccWvxgCDYvd7yLSwkw0hZ3NVTkSJqigY0ZozK3lv85jR02XOJSDPQ" alt="Baseball 9 Mod APK - Unlimited Coins" loading="lazy">
+        <h3>Baseball 9 Mod</h3>
+        <p>Unlimited coins and energy</p>
+        <div class="app-stats">
+          <div class="downloads">📥 10M+</div>
+          <div class="rating">⭐ <span class="star-rating">4.5</span></div>
+        </div>
+        <a href="iziwizi" class="install-btn">Download Mod</a>
+      </div>
+
+      <!-- Pokemon Go -->
+      <div class="app-card" data-name="Pokemon Go Mod">
+        <span class="mod-badge">MOD</span>
+        <img src="https://modyolo.com/wp-content/uploads/2021/09/pokemon-150x150.png" alt="Pokemon Go Mod APK - Unlimited PokéCoins" loading="lazy">
+        <h3>Pokemon Go Mod</h3>
+        <p>Unlimited PokéCoins and items</p>
+        <div class="app-stats">
+          <div class="downloads">📥 100M+</div>
+          <div class="rating">⭐ <span class="star-rating">4.2</span></div>
+        </div>
+        <a href="iziwizi" class="install-btn">Download Mod</a>
+      </div>
+      
+     <div class="app-card" data-name="Soccer Manager 2025 Mod">
+    <span class="mod-badge">MOD</span>
+    <img src="https://i.git99.com/upload/android/icon/2024/12/25/ef9e566d6ec01d66418b67cd01b825b1.webp" alt="Soccer Manager 2025 Mod APK - Unlimited Transfer Budget" loading="lazy">
+    <h3>Soccer Manager 2025 Mod</h3>
+    <p>Football management simulator with unlimited transfer budget</p>
+    <div class="app-stats">
+      <div class="downloads">📥 1M+</div>
+      <div class="rating">⭐ <span class="star-rating">4.4</span></div>
+    </div>
+    <a href="iziwizi" class="install-btn">Download Mod</a>
+</div>
+      
+      <!-- Dream League Soccer 2025 Mod -->
+      <div class="app-card" data-name="Dream League Soccer 2025(dls) Mod">
+        <span class="mod-badge">MOD</span>
+        <img src="https://i.git99.com/upload/android/icon/2025/05/13/d1664b5dd1bab55e168cf51ca01f8ae2.jpg" alt="Dream League Soccer 2025 Mod APK - Unlimited Coins" loading="lazy">
+        <h3>Dream League Soccer 2025 Mod</h3>
+        <p>Build your dream team with unlimited coins and players</p>
+        <div class="app-stats">
+          <div class="downloads">📥 100M+</div>
+          <div class="rating">⭐ <span class="star-rating">4.6</span></div>
+        </div>
+        <a href="iziwizi" class="install-btn">Download Mod</a>
+      </div>
+
+      <!-- Monopoly Go -->
+      <div class="app-card" data-name="Monopoly Go Mod">
+        <span class="mod-badge">MOD</span>
+        <img src="https://play-lh.googleusercontent.com/75_hxCapJyQp3p2Z_ZHbPvxQJKN5UXzwaOMb_oA2ZMKFRssbbGGRNKjZTC3OmJoxdLY" alt="Monopoly Go Mod APK - Unlimited Dice" loading="lazy">
+        <h3>Monopoly Go Mod</h3>
+        <p>Unlimited dice and money</p>
+        <div class="app-stats">
+          <div class="downloads">📥 50M+</div>
+          <div class="rating">⭐ <span class="star-rating">4.5</span></div>
+        </div>
+        <a href="iziwizi" class="install-btn">Download Mod</a>
+      </div>
+
+      <!-- Coin Master -->
+      <div class="app-card" data-name="Coin Master Mod">
+        <span class="mod-badge">MOD</span>
+        <img src="https://modyolo.com/wp-content/uploads/2021/10/coin-master-apk-150x150.png" alt="Coin Master Mod APK - Unlimited Spins" loading="lazy">
+        <h3>Coin Master Mod</h3>
+        <p>Unlimited spins and coins</p>
+        <div class="app-stats">
+          <div class="downloads">📥 200M+</div>
+          <div class="rating">⭐ <span class="star-rating">4.4</span></div>
+        </div>
+        <a href="iziwizi" class="install-btn">Download Mod</a>
+      </div>
+
+      <!-- Clash of Clans -->
+      <div class="app-card" data-name="Clash of Clans Mod">
+        <span class="mod-badge">MOD</span>
+        <img src="https://modyolo.com/wp-content/uploads/2022/02/clash-of-clans-150x150.png" alt="Clash of Clans Mod APK - Unlimited Gems" loading="lazy">
+        <h3>Clash of Clans Mod</h3>
+        <p>Unlimited gems and resources</p>
+        <div class="app-stats">
+          <div class="downloads">📥 500M+</div>
+          <div class="rating">⭐ <span class="star-rating">4.6</span></div>
+        </div>
+        <a href="iziwizi" class="install-btn">Download Mod</a>
+      </div>
+
+      <!-- Poppy Playtime -->
+      <div class="app-card" data-name="Poppy Playtime Chapter 2 Mod">
+        <span class="mod-badge">MOD</span>
+        <img src="https://modyolo.com/wp-content/uploads/2022/08/poppy-playtime-chapter-2-150x150.jpg" alt="Poppy Playtime Mod APK - All Chapters Unlocked" loading="lazy">
+        <h3>Poppy Playtime Mod</h3>
+        <p>All chapters unlocked</p>
+        <div class="app-stats">
+          <div class="downloads">📥 5M+</div>
+          <div class="rating">⭐ <span class="star-rating">4.1</span></div>
+        </div>
+        <a href="iziwizi" class="install-btn">Download Mod</a>
+      </div>
+
+      <!-- Clash Royale -->
+      <div class="app-card" data-name="Clash Royale Mod">
+        <span class="mod-badge">MOD</span>
+        <img src="https://modyolo.com/wp-content/uploads/2021/11/clash-royale-150x150.jpg" alt="Clash Royale Mod APK - Unlimited Gems" loading="lazy">
+        <h3>Clash Royale Mod</h3>
+        <p>Unlimited gems and cards</p>
+        <div class="app-stats">
+          <div class="downloads">📥 100M+</div>
+          <div class="rating">⭐ <span class="star-rating">4.5</span></div>
+        </div>
+        <a href="iziwizi" class="install-btn">Download Mod</a>
+      </div>
+
+      <!-- Garena Free Fire -->
+      <div class="app-card" data-name="Garena Free Fire Mod">
+        <span class="mod-badge">MOD</span>
+        <img src="https://modyolo.com/wp-content/uploads/2022/05/garena-free-fire-150x150.png" alt="Garena Free Fire Mod APK - Unlimited Diamonds" loading="lazy">
+        <h3>Free Fire Mod</h3>
+        <p>Unlimited diamonds and skins</p>
+        <div class="app-stats">
+          <div class="downloads">📥 1B+</div>
+          <div class="rating">⭐ <span class="star-rating">4.3</span></div>
+        </div>
+        <a href="iziwizi" class="install-btn">Download Mod</a>
+      </div>
+
+      <!-- Delta Force -->
+      <div class="app-card" data-name="Delta Force Mod">
+        <span class="mod-badge">MOD</span>
+        <img src="https://i.git99.com/upload/android/icon/2025/04/22/e579edb4de0eb866f9a9b60e55622403.jpg" alt="Delta Force Mod APK - Premium Weapons" loading="lazy">
+        <h3>Delta Force Mod</h3>
+        <p>Premium weapons unlocked</p>
+        <div class="app-stats">
+          <div class="downloads">📥 10M+</div>
+          <div class="rating">⭐ <span class="star-rating">4.2</span></div>
+        </div>
+        <a href="iziwizi" class="install-btn">Download Mod</a>
+      </div>
+
+      <!-- Call of Duty -->
+      <div class="app-card" data-name="Call of Duty Warzone Mobile Mod">
+        <span class="mod-badge">MOD</span>
+        <img src="https://modyolo.com/wp-content/uploads/2022/09/warzone-mobile-150x150.png" alt="Call of Duty Warzone Mobile Mod APK - All Weapons" loading="lazy">
+        <h3>COD: Warzone Mobile</h3>
+        <p>All weapons and skins unlocked</p>
+        <div class="app-stats">
+          <div class="downloads">📥 50M+</div>
+          <div class="rating">⭐ <span class="star-rating">4.4</span></div>
+        </div>
+        <a href="iziwizi" class="install-btn">Download Mod</a>
+      </div>
+
+      <!-- 8 Ball Pool -->
+      <div class="app-card" data-name="8 Ball Pool Mod">
+        <span class="mod-badge">MOD</span>
+        <img src="https://modyolo.com/wp-content/uploads/2021/09/8-ball-pool-150x150.jpg" alt="8 Ball Pool Mod APK - Unlimited Coins" loading="lazy">
+        <h3>8 Ball Pool Mod</h3>
+        <p>Unlimited coins and cues</p>
+        <div class="app-stats">
+          <div class="downloads">📥 500M+</div>
+          <div class="rating">⭐ <span class="star-rating">4.5</span></div>
+        </div>
+        <a href="iziwizi" class="install-btn">Download Mod</a>
+      </div>
+
+      <!-- Royal Match -->
+      <div class="app-card" data-name="Royal Match Mod">
+        <span class="mod-badge">MOD</span>
+        <img src="https://modyolo.com/wp-content/uploads/2021/09/royal-match-150x150.jpg" alt="Royal Match Mod APK - Unlimited Lives" loading="lazy">
+        <h3>Royal Match Mod</h3>
+        <p>Unlimited lives and boosters</p>
+        <div class="app-stats">
+          <div class="downloads">📥 10M+</div>
+          <div class="rating">⭐ <span class="star-rating">4.7</span></div>
+        </div>
+        <a href="iziwizi" class="install-btn">Download Mod</a>
+      </div>
+
+      <!-- Subway Surfers -->
+      <div class="app-card" data-name="Subway Surfers Mod">
+        <span class="mod-badge">MOD</span>
+        <img src="https://i.git99.com/upload/android/icon/2025/05/13/79e9272c549b16952c0a26caca755a4d.jpg" alt="Subway Surfers Mod APK - Unlimited Keys" loading="lazy">
+        <h3>Subway Surfers Mod</h3>
+        <p>Unlimited keys and coins</p>
+        <div class="app-stats">
+          <div class="downloads">📥 1B+</div>
+          <div class="rating">⭐ <span class="star-rating">4.6</span></div>
+        </div>
+        <a href="iziwizi" class="install-btn">Download Mod</a>
+      </div>
+
+      <!-- Stumble Guys -->
+      <div class="app-card" data-name="Stumble Guys Mod">
+        <span class="mod-badge">MOD</span>
+        <img src="https://modyolo.com/wp-content/uploads/2021/12/stumble-guys-multiplayer-royale-150x150.jpg" alt="Stumble Guys Mod APK - Unlocked Skins" loading="lazy">
+        <h3>Stumble Guys Mod</h3>
+        <p>Unlocked skins and emotes</p>
+        <div class="app-stats">
+          <div class="downloads">📥 100M+</div>
+          <div class="rating">⭐ <span class="star-rating">4.4</span></div>
+        </div>
+        <a href="iziwizi" class="install-btn">Download Mod</a>
+      </div>
+
+      <!-- NEW GAME: Once Human -->
+      <div class="app-card" data-name="Once Human">
+        <span class="mod-badge">MOD</span>
+        <img src="https://play-lh.googleusercontent.com/8iAPNzjIIGt1NKRgTQDuOBpRNQloXaFxjf_bMTl9gMQ4w5exF35-8TdsNnAxvQdKQpg" alt="Once Human Mod APK - Survival Game" loading="lazy">
+        <h3>Once Human</h3>
+        <p>Post-apocalyptic open-world survival</p>
+        <div class="app-stats">
+          <div class="downloads">📥 5M+</div>
+          <div class="rating">⭐ <span class="star-rating">4.3</span></div>
+        </div>
+        <a href="iziwizi" class="install-btn">Download Mod</a>
+      </div>
+      
+     <div class="app-card" data-name="Star Wars Galaxy of Heroes Mod">
+    <span class="mod-badge">MOD</span>
+    <img src="https://images.appmagic.rocks/?uri=https://play-lh.googleusercontent.com/mD_B8KzUVh3ENwq79T_EilMzyK-Zg6srO4tBbX3ilzTE3XglLnj5NGJkYg5RmF0TbS3G=s98-c" alt="Star Wars Galaxy of Heroes Mod APK - All Characters" loading="lazy">
+    <h3>Star Wars: Galaxy of Heroes</h3>
+    <p>Collect and battle with Star Wars characters</p>
+    <div class="app-stats">
+      <div class="downloads">📥 10M+</div>
+      <div class="rating">⭐ <span class="star-rating">4.5</span></div>
+    </div>
+    <a href="iziwizi" class="install-btn">Download Mod</a>
+</div>
+
+<div class="app-card" data-name="Zenless Zone Zero Mod">
+    <span class="mod-badge">MOD</span>
+    <img src="https://i.git99.com/upload/android/icon/2025/01/23/69f7920e4ab71d509bdb345dd6ebd8b9.jpg" alt="Zenless Zone Zero Mod APK - Anime Action RPG" loading="lazy">
+    <h3>Zenless Zone Zero Mod</h3>
+    <p>Urban action RPG with anime-style combat</p>
+    <div class="app-stats">
+      <div class="downloads">📥 2M+</div>
+      <div class="rating">⭐ <span class="star-rating">4.6</span></div>
+    </div>
+    <a href="iziwizi" class="install-btn">Download Mod</a>
+</div>
+
+<div class="app-card" data-name="Wuthering Waves Mod">
+    <span class="mod-badge">MOD</span>
+    <img src="https://i.git99.com/upload/android/icon/2025/04/29/716a1a30c0892fe7c948ea6494fe9076.jpg" alt="Wuthering Waves Mod APK - Martial Arts Combat" loading="lazy">
+    <h3>Wuthering Waves Mod</h3>
+    <p>Open-world action with martial arts combat</p>
+    <div class="app-stats">
+      <div class="downloads">📥 3M+</div>
+      <div class="rating">⭐ <span class="star-rating">4.4</span></div>
+    </div>
+    <a href="iziwizi" class="install-btn">Download Mod</a>
+</div>
+      
+      <div class="app-card" data-name="Devil War: Doom Shooting Game Mod">
+    <span class="mod-badge">MOD</span>
+    <img src="https://i.git99.com/upload/android/icon/2024/06/27/bf7e1acc6f88ef6e9874db023dd79855.jpg" alt="Devil War: Doom Shooting Game Mod APK - Unlimited Ammo" loading="lazy">
+    <h3>Devil War: Doom Shooting Game Mod</h3>
+    <p>Intense demon-slaying FPS with unlimited ammo</p>
+    <div class="app-stats">
+      <div class="downloads">📥 1M+</div>
+      <div class="rating">⭐ <span class="star-rating">4.2</span></div>
+    </div>
+    <a href="iziwizi" class="install-btn">Download Mod</a>
+</div>
+      
+       <div class="app-card" data-name="Toca Boca World">
+    <span class="mod-badge">MOD</span>
+    <img src="https://images.appmagic.rocks/?uri=https://play-lh.googleusercontent.com/Elecg80RmZ8j3v2CSSZl1Z_87xG5M9E51hZkmFwjSaQFg3WZMk_hBJZbj9OgGaM9Ujc=s98-c" alt="Toca Boca World Mod APK - All Items Unlocked" loading="lazy">
+    <h3>Toca Boca World Mod</h3>
+    <p>Creative kids' sandbox with all items unlocked</p>
+    <div class="app-stats">
+      <div class="downloads">📥 10M+</div>
+      <div class="rating">⭐ <span class="star-rating">4.3</span></div>
+    </div>
+    <a href="iziwizi" class="install-btn">Download Mod</a>
+</div>
+      
+      <div class="app-card" data-name="Pokémon TCG Pocket Mod ">
+    <span class="mod-badge">MOD</span>
+    <img src="https://images.appmagic.rocks/?uri=https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/79/e2/18/79e2188d-a067-b888-3768-638b38b4b37b/AppIcon-0-0-1x_U007emarketing-0-8-0-85-220.png/0x98h.jpg" alt="Pokémon TCG Pocket Mod APK - All Booster Packs" loading="lazy">
+    <h3>Pokémon TCG Pocket Mod </h3>
+    <p>Digital card game with all booster packs unlocked</p>
+    <div class="app-stats">
+      <div class="downloads">📥 5M+</div>
+      <div class="rating">⭐ <span class="star-rating">4.7</span></div>
+    </div>
+    <a href="iziwizi" class="install-btn">Download Mod</a>
+</div>
+      
+    <div class="app-card" data-name="Brawl Stars Mod ">
+    <span class="mod-badge">MOD</span>
+    <img src="https://i.git99.com/upload/android/icon/2025/05/06/a51a535088e1ffa82d3fd1dde96a1523.jpg" alt="Brawl Stars Mod APK - Unlimited Resources" loading="lazy">
+    <h3>Brawl Stars Mod </h3>
+    <p>Fast-paced arena shooter with unlimited resources</p>
+    <div class="app-stats">
+      <div class="downloads">📥 100M+</div>
+      <div class="rating">⭐ <span class="star-rating">4.6</span></div>
+    </div>
+    <a href="iziwizi" class="install-btn">Download Mod</a>
+</div>
+      
+   <div class="app-card" data-name="DRAGON BALL LEGENDS Mod">
+    <span class="mod-badge">MOD</span>
+    <img src="https://modyolo.com/wp-content/uploads/2022/06/dragon-ball-legends-150x150.png" alt="DRAGON BALL LEGENDS Mod APK - All Characters" loading="lazy">
+    <h3>DRAGON BALL LEGENDS Mod</h3>
+    <p>Epic anime battles with all characters unlocked</p>
+    <div class="app-stats">
+      <div class="downloads">📥 10M+</div>
+      <div class="rating">⭐ <span class="star-rating">4.5</span></div>
+    </div>
+    <a href="iziwizi" class="install-btn">Download Mod</a>
+</div>
+      
+<div class="app-card" data-name="MadOut2 BigCity Online Mod">
+    <span class="mod-badge">MOD</span>
+    <img src="https://modyolo.com/wp-content/uploads/2021/11/madout2-bigcityonline-150x150.jpg" alt="MadOut2 BigCity Online Mod APK - Unlimited Vehicles" loading="lazy">
+    <h3>MadOut2 BigCity Online Mod</h3>
+    <p>Open-world racing with unlimited vehicles</p>
+    <div class="app-stats">
+      <div class="downloads">📥 5M+</div>
+      <div class="rating">⭐ <span class="star-rating">4.1</span></div>
+    </div>
+    <a href="iziwizi" class="install-btn">Download Mod</a>
+</div>
+      
+      <div class="app-card" data-name="CarX Street Mod">
+    <span class="mod-badge">MOD</span>
+    <img src="https://modyolo.com/wp-content/uploads/2022/08/carx-street-1-150x150.jpeg" alt="CarX Street Mod APK - Unlimited Money" loading="lazy">
+    <h3>CarX Street Mod</h3>
+    <p>Street racing simulator with unlimited money and tuned cars</p>
+    <div class="app-stats">
+      <div class="downloads">📥 10M+</div>
+      <div class="rating">⭐ <span class="star-rating">4.4</span></div>
+    </div>
+    <a href="iziwizi" class="install-btn">Download Mod</a>
+</div>
+      
+    <div class="app-card" data-name="Dragon City: Mobile Adventure Mod">
+    <span class="mod-badge">MOD</span>
+    <img src="https://modyolo.com/wp-content/uploads/2022/05/dragon-city-mobile-150x150.png" alt="Dragon City: Mobile Adventure Mod APK - Unlimited Gems" loading="lazy">
+    <h3>Dragon City: Mobile Adventure Mod</h3>
+    <p>Breed and collect dragons with unlimited gems and food</p>
+    <div class="app-stats">
+      <div class="downloads">📥 50M+</div>
+      <div class="rating">⭐ <span class="star-rating">4.3</span></div>
+    </div>
+    <a href="iziwizi" class="install-btn">Download Mod</a>
+</div>  
+      
+<div class="app-card" data-name="Archero 2 Mod">
+    <span class="mod-badge">MOD</span>
+    <img src="https://i.git99.com/upload/android/icon/2024/12/02/ebc6031a4f48970055f2a9a968a4a650.jpg" alt="Archero 2 Mod APK - Unlimited Skills" loading="lazy">
+    <h3>Archero 2 Mod</h3>
+    <p>Roguelike archery adventure with unlimited skills and upgrades</p>
+    <div class="app-stats">
+      <div class="downloads">📥 1M+</div>
+      <div class="rating">⭐ <span class="star-rating">4.5</span></div>
+    </div>
+    <a href="iziwizi" class="install-btn">Download Mod</a>
+</div>
+      
+<div class="app-card" data-name="The Spike Cross - Volleyball Mod">
+    <span class="mod-badge">MOD</span>
+    <img src="https://images.appmagic.rocks/?uri=https://play-lh.googleusercontent.com/s6gAQGi7MF2BBgzR6i2ZouZBT3mTLV97dGxgyekA2MQXVfvMUsJxgdEqMbhX0zf8rVg=s98-c" alt="The Spike Cross - Volleyball Mod APK - Unlimited Energy" loading="lazy">
+    <h3>The Spike Cross - Volleyball Mod</h3>
+    <p>Competitive volleyball with unlimited energy and characters</p>
+    <div class="app-stats">
+      <div class="downloads">📥 2M+</div>
+      <div class="rating">⭐ <span class="star-rating">4.4</span></div>
+    </div>
+    <a href="iziwizi" class="install-btn">Download Mod</a>
+</div>
+      
+      <div class="app-card" data-name="Dunk City Dynasty Mod">
+    <span class="mod-badge">MOD</span>
+    <img src="https://images.appmagic.rocks/?uri=https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/5f/a5/88/5fa5882c-2a9e-a6fd-a2dd-b74772a689a1/AppIcon-0-0-1x_U007emarketing-0-8-0-0-85-220.png/0x98h.jpg" alt="Dunk City Dynasty Mod APK - Unlimited Stamina" loading="lazy">
+    <h3>Dunk City Dynasty Mod</h3>
+    <p>Street basketball game with unlimited stamina and legendary players</p>
+    <div class="app-stats">
+      <div class="downloads">📥 1M+</div>
+      <div class="rating">⭐ <span class="star-rating">4.3</span></div>
+    </div>
+    <a href="iziwizi" class="install-btn">Download Mod</a>
+</div>
+      
+      <div class="app-card" data-name="Schedule 1 Mobile Game Mod">
+    <span class="mod-badge">MOD</span>
+    <img src="https://images.appmagic.rocks/?uri=https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/f5/07/b0/f507b0f2-887f-4e2f-826b-cfdae9f6adf4/AppIcon-1x_U007emarketing-0-10-0-85-220-0.png/0x98h.jpg" alt="Schedule 1 Mobile Game Mod APK - Survival Horror" loading="lazy">
+    <h3>Schedule 1 Mobile Game Mod</h3>
+    <p>Survival horror experience with unlimited resources to survive the night shift</p>
+    <div class="app-stats">
+      <div class="downloads">📥 500K+</div>
+      <div class="rating">⭐ <span class="star-rating">4.2</span></div>
+    </div>
+    <a href="iziwizi" class="install-btn">Download Mod</a>
+</div>
+      
+      <div class="app-card" data-name="Speed Stars Mod">
+    <span class="mod-badge">MOD</span>
+    <img src="https://i.git99.com/upload/android/icon/2025/03/06/b498b5445806edffc15e4ff985d20165.jpg" alt="Speed Stars Mod APK - Endless Runner" loading="lazy">
+    <h3>Speed Stars Mod</h3>
+    <p>Endless runner with all modes unlocked, no ads, and mod menu</p>
+    <div class="app-stats">
+      <div class="downloads">📥 2M+</div>
+      <div class="rating">⭐ <span class="star-rating">4.5</span></div>
+    </div>
+    <a href="iziwizi" class="install-btn">Download Mod</a>
+</div>
+      
+      <div class="app-card" data-name="Car Parking Multiplayer 2 Mod">
+    <span class="mod-badge">MOD</span>
+    <img src="https://modyolo.com/wp-content/uploads/2024/09/car-parking-multiplayer-2-150x150.jpg" alt="Car Parking Multiplayer 2 Mod APK - All Cars Unlocked" loading="lazy">
+    <h3>Car Parking Multiplayer 2 Mod</h3>
+    <p>🚗 All Cars Unlocked | 💰 Unlimited Money | 🚫 No Ads</p>
+    <div class="app-stats">
+      <div class="downloads">📥 10M+</div>
+      <div class="rating">⭐ <span class="star-rating">4.4</span></div>
+    </div>
+    <a href="iziwizi" class="install-btn">Download Mod</a>
+</div>
+      
+      <div class="app-card" data-name="Merge Fellas Mod">
+    <span class="mod-badge">MOD</span>
+    <img src="https://i.git99.com/upload/android/icon/2025/05/27/caec469034af5a754bfdbb020e3f93ac.webp" alt="Merge Fellas Mod APK - All Characters" loading="lazy">
+    <h3>Merge Fellas Mod</h3>
+    <p>✨ All Characters Unlocked<br>💰 Infinite Gems & Coins<br>🛡️ No Ads</p>
+    <div class="app-stats">
+      <div class="downloads">📥 5M+</div>
+      <div class="rating">⭐ <span class="star-rating">4.6</span></div>
+    </div>
+    <a href="iziwizi" class="install-btn">Download Mod</a>
+</div>
+      
+      <div class="app-card" data-name="Slugterra: Slug it Out 2 Mod">
+    <span class="mod-badge">MOD</span>
+    <img src="https://i.git99.com/upload/android/icon/2024/10/02/917ebf5af24b262447e6ad7bcad7ac39.webp" alt="Slugterra: Slug it Out 2 Mod APK - All Slugs" loading="lazy">
+    <h3>Slugterra: Slug it Out 2 Mod</h3>
+    <p>✨ All Slugs Unlocked<br>💎 Unlimited Energy & Coins<br>🛡️ No Ads</p>
+    <div class="app-stats">
+      <div class="downloads">📥 1M+</div>
+      <div class="rating">⭐ <span class="star-rating">4.3</span></div>
+    </div>
+    <a href="iziwizi" class="install-btn">Download Mod</a>
+</div>
+      
+      <div class="app-card" data-name="Game of Thrones: Kingsroad Mod">
+    <span class="mod-badge">MOD</span>
+    <img src="https://images.appmagic.rocks/?uri=https://play-lh.googleusercontent.com/-jYO1YHCdaUrCJzLln1b8P1JfRAChp_vch1sr4zPFY8282nlvJqKVRWdypBZ-b3Gjw=s98-c" alt="Game of Thrones: Kingsroad Mod APK - All Characters" loading="lazy">
+    <h3>Game of Thrones: Kingsroad Mod</h3>
+    <p>👑 All Characters Unlocked<br>💰 Unlimited Gold & Energy<br>🛡️ 🏰 Premium Unlocked</p>
+    <div class="app-stats">
+      <div class="downloads">📥 5M+</div>
+      <div class="rating">⭐ <span class="star-rating">4.5</span></div>
+    </div>
+    <a href="iziwizi" class="install-btn">Download Mod</a>
+</div>
+      
+      <div class="app-card" data-name="FRAG Pro Shooter Mod">
+    <span class="mod-badge">MOD</span>
+    <img src="https://images.appmagic.rocks/?uri=https://play-lh.googleusercontent.com/5o1epd429Kgla2-R4k98WuOX0uLqb6z-_72b4_ajC9npNVWANHwuT4sIqbAlaDLfIA=s98-c" alt="FRAG Pro Shooter Mod APK - All Heroes" loading="lazy">
+    <h3>FRAG Pro Shooter <span class="highlight">Mod</span></h3>
+    <p>👑 All Heroes Unlocked | 💎 Unlimited Gems | ⚡ Max Energy</p>
+    <div class="app-stats">
+      <div class="downloads">📥 10M+</div>
+      <div class="rating">⭐ <span class="star-rating">4.4</span></div>
+    </div>
+    <a href="iziwizi" class="install-btn">Download Mod</a>
+</div>
+      
+     <div class="app-card" data-name="Last Day on Earth: Survival Mod">
+    <span class="mod-badge">MOD</span>
+    <img src="https://images.appmagic.rocks/?uri=https://play-lh.googleusercontent.com/1NJaEmZal-WWfNTcpQkpO0Z0U4SbLMcit2K3DDW2_BQ7OJkyn1at4zDAgBGCfZLLubDd=s98-c" alt="Last Day on Earth: Survival Mod APK - God Mode" loading="lazy">
+    <h3>Last Day on Earth: Survival Mod <span class="highlight">Mod</span></h3>
+    <p>💀 God Mode | 🧰 Unlimited Resources | 🔫 All Weapons | 🚫 No Ads</p>
+    <div class="app-stats">
+      <div class="downloads">📥 50M+</div>
+      <div class="rating">⭐ <span class="star-rating">4.3</span></div>
+    </div>
+    <a href="iziwizi" class="install-btn">Download Mod</a>
+</div>
+      
+    <div class="app-card" data-name="Zooba Mod">
+    <span class="mod-badge">MOD</span>
+    <img src="https://static.apkmody.com/play-lh.googleusercontent.com/ganz5FKN-8sFTBZ04hh-9unsONKdlmJ6yeV3bBgjTP95cfjahgcpI5MKZxsoFMfldag=s180-rw" alt="Zooba Mod APK - Battle Royale Zoo" loading="lazy">
+    <h3>Zooba <span class="highlight">Mod</span></h3>
+    <p>🐾 Battle Royale Zoo Madness | 🦁 Play as Wild Animals | ⚔️ Unlock Premium Features | 🚀 Dominate the Arena</p>
+    <div class="app-stats">
+      <div class="downloads">📥 5M+</div>
+      <div class="rating">⭐ <span class="star-rating">4.2</span></div>
+    </div>
+    <a href="iziwizi" class="install-btn">Download Mod</a>
+</div>
+
+       
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 4APK Mobile Games. All rights reserved. Download premium modded APK games with unlimited money and unlocked features.</p>
+  </footer>
+
+ <script>
+    function filterGames() {
+      const input = document.getElementById("searchInput").value.toLowerCase().trim();
+      const cards = document.querySelectorAll(".app-card");
+
+      if (!input) {
+        // If search is empty, show all cards
+        cards.forEach(card => {
+          card.style.display = "block";
         });
+        return;
+      }
+
+      const searchTerms = input.split(' '); // Split into multiple search terms
+      
+      cards.forEach(card => {
+        const name = card.getAttribute("data-name").toLowerCase();
+        const title = card.querySelector("h3").textContent.toLowerCase();
+        const description = card.querySelector("p").textContent.toLowerCase();
         
-        // Slideshow functionality
-        let slideIndex = 1;
-        let slideInterval;
+        // Check if ALL search terms match in either name, title or description
+        const shouldShow = searchTerms.every(term => 
+          name.includes(term) || 
+          title.includes(term) || 
+          description.includes(term)
+        );
         
-        function plusSlides(n) {
-            clearInterval(slideInterval);
-            showSlides(slideIndex += n);
-            restartSlideInterval();
-        }
+        card.style.display = shouldShow ? "block" : "none";
+      });
+    }
+  
+    // Add structured data for each game
+    document.addEventListener('DOMContentLoaded', function() {
+      const games = document.querySelectorAll('.app-card');
+      games.forEach(game => {
+        const title = game.querySelector('h3').textContent;
+        const description = game.querySelector('p').textContent;
+        const downloads = game.querySelector('.downloads').textContent.replace('📥 ', '');
         
-        function currentSlide(n) {
-            clearInterval(slideInterval);
-            showSlides(slideIndex = n);
-            restartSlideInterval();
-        }
+        // Create individual schema for each game
+        const gameSchema = {
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": title + " Mod APK",
+          "operatingSystem": "Android",
+          "applicationCategory": "Game",
+          "description": description,
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": game.querySelector('.star-rating').textContent,
+            "ratingCount": downloads
+          }
+        };
         
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            let dots = document.getElementsByClassName("dot");
-            
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            
-            for (i = 0; i < slides.length; i++) {
-                slides[i].classList.remove("active");
-            }
-            
-            for (i = 0; i < dots.length; i++) {
-                dots[i].classList.remove("active");
-            }
-            
-            slides[slideIndex-1].classList.add("active");
-            dots[slideIndex-1].classList.add("active");
-        }
-        
-        function restartSlideInterval() {
-            clearInterval(slideInterval);
-            slideInterval = setInterval(() => {
-                plusSlides(1);
-            }, 5000); // Change image every 5 seconds
-        }
-        
-        // Start the slideshow autoplay
-        restartSlideInterval();
-    </script>
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.text = JSON.stringify(gameSchema);
+        document.head.appendChild(script);
+      });
+    });
+</script>
 </body>
 </html>
