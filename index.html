@@ -15,7 +15,32 @@
       color:var(--text);
       background: linear-gradient(180deg,var(--bg1),var(--bg2));
       display:flex; justify-content:center; align-items:center; min-height:100vh;
-      text-align:center; padding:20px;
+      text-align:center; padding:20px; flex-direction:column;
+    }
+    h1 {
+      font-size:clamp(28px,6vw,40px); font-weight:800;
+      margin-bottom:12px; display:flex; align-items:center; justify-content:center; gap:10px;
+    }
+    h1 img {width:40px; height:40px}
+    .subtitle {
+      max-width:600px; margin:0 auto 20px auto;
+      font-size:clamp(14px,2.5vw,18px); color:var(--muted);
+    }
+    .limited-alert {
+      background: linear-gradient(90deg, #b30000, #ff1a1a);
+      color: #fff;
+      font-weight: 700;
+      text-align: center;
+      padding: 10px 14px;
+      border-radius: 12px;
+      margin: 0 auto 18px auto;
+      box-shadow: 0 0 12px rgba(255,0,0,0.6);
+      animation: pulse 1.6s infinite alternate;
+      max-width:400px;
+    }
+    @keyframes pulse {
+      from { opacity: 0.8; }
+      to { opacity: 1; }
     }
     .card {
       background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
@@ -25,27 +50,7 @@
       max-width:400px; width:100%;
       position:relative;
     }
-    .limited-alert {
-      background: linear-gradient(90deg, #b30000, #ff1a1a);
-      color: #fff;
-      font-weight: 700;
-      text-align: center;
-      padding: 8px 12px;
-      border-radius: 10px;
-      margin-bottom: 14px;
-      box-shadow: 0 0 12px rgba(255,0,0,0.6);
-      animation: pulse 1.6s infinite alternate;
-    }
-    @keyframes pulse {
-      from { opacity: 0.8; }
-      to { opacity: 1; }
-    }
     .app-icon img {width:100px; height:100px; margin-bottom:12px}
-    h1 {
-      font-size:clamp(28px,6vw,40px); font-weight:800;
-      margin-bottom:18px; display:flex; align-items:center; justify-content:center; gap:10px;
-    }
-    h1 img {width:40px; height:40px}
     h3 {font-size:22px; margin:10px 0; font-weight:700; color:var(--accent)}
     p {color:var(--muted); margin-bottom:20px}
     .btn {
@@ -68,16 +73,20 @@
 <body>
   <main>
     <h1><img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify Logo"/> Spotify Premium</h1>
+    <p class="subtitle">Enjoy unlimited music streaming with no ads, offline downloads, and the ultimate sound experience.</p>
+
+    <div class="limited-alert">⚠️ Limited Time Offer</div>
+
     <article class="card">
-      <div class="limited-alert">⚠️ Limited Time Offer</div>
       <div class="app-icon">
         <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Spotify_logo_without_text.svg" alt="Spotify Logo"/>
       </div>
       <h3>Spotify Premium</h3>
-      <p>Enjoy unlimited music streaming with no ads, offline downloads, and the ultimate sound experience.</p>
+      <p>Stream your favorite songs anytime, anywhere, and elevate your music experience.</p>
       <a class="btn" href="#download">DOWNLOAD NOW</a>
       <div class="users-online">🟢 <span id="liveUsers">472</span> users online</div>
     </article>
+
     <footer>© 2025 APK4U — All Rights Reserved</footer>
   </main>
 
